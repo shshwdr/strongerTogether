@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
+    public float cooldownTime;
+    float currentCooldownTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,7 @@ public class PlayerShooting : MonoBehaviour
             //GetComponents<AudioSource>()[0].PlayOneShot(shootClip);
 
             Vector3 aimDirection = (mousePosition - transform.position).normalized;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, aimDirection);
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, aimDirection,100, 1 << LayerMask.NameToLayer("Enemy"));
             if (raycastHit2D.collider != null)
             {
                 EnemyController enemy = raycastHit2D.collider.GetComponent<EnemyController>();

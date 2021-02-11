@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Imp
       objectReference: {fileID: 0}
+    - target: {fileID: 1337939136942657030, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657031, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Radius
@@ -50,22 +55,22 @@ PrefabInstance:
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Speed
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Height
-      value: 0.15
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Radius
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_BaseOffset
-      value: 0.1
+      value: 0.078
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
@@ -139,10 +144,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1472044345184796163, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1722182380026152143, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.021
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934203500337346669, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.018
+      objectReference: {fileID: 0}
+    - target: {fileID: 8917621902419602580, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d77390d53382134482583ecfe7f553e, type: 3}
