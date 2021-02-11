@@ -4,19 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 //using PixelCrushers.DialogueSystem;
-public class PlayerController: MonoBehaviour
+public class PlayerController: HPCharacterController
 {
    // public static Player instance = null;
     public Rigidbody2D rb;
     Vector2 movement;
     public float moveSpeed = 5f;
     Animator animator;
-    public AudioClip gameoverClip;
-    public bool isCamouflage;
 
-    public Sprite camouflagedSprite;
-    public AnimatorOverrideController camouflagedAnimator;
-    public GameObject exit;
+    bool facingRight = true;
+
 
 
     private void Awake()
@@ -44,6 +41,7 @@ public class PlayerController: MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        EnemyManager.instance.player = this;
     }
 
     //public void Damage(int dam = 1)
@@ -101,6 +99,14 @@ public class PlayerController: MonoBehaviour
     {
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if(facingRight == false && movement.x > 0)
+        {
+            flip();
+        }
+        if (facingRight == true && movement.x < 0)
+        {
+            flip();
+        }
         // rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
     }
 
@@ -117,5 +123,11 @@ public class PlayerController: MonoBehaviour
     //        DialogueManager.ShowAlert("You are camouflaged");
     //    }
     //}
-
+    void flip()
+    {
+        facingRight = !facingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x = -scaler.x;
+        transform.localScale = scaler;
+    }
 }
