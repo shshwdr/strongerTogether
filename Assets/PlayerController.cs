@@ -36,12 +36,13 @@ public class PlayerController: HPCharacterController
         //DontDestroyOnLoad(gameObject);
     }
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         EnemyManager.instance.player = this;
+        base.Start();
     }
 
     //public void Damage(int dam = 1)
@@ -71,7 +72,7 @@ public class PlayerController: HPCharacterController
     //    GameManager.instance.isPaused = false;
     //}
     // Update is called once per frame
-    void Update()
+    override protected void Update()
     {
 
         //if (GameManager.instance.isCheatOn && Input.GetKeyDown(KeyCode.M))
@@ -93,6 +94,7 @@ public class PlayerController: HPCharacterController
         float speed = movement.sqrMagnitude;
         movement = Vector2.ClampMagnitude(movement, 1);
         animator.SetFloat("speed", movement.sqrMagnitude);
+        base.Update();
         // transform
     }
     private void LateUpdate()

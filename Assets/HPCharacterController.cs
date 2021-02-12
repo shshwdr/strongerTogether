@@ -12,6 +12,10 @@ public class HPCharacterController : MonoBehaviour
 
     public float stunTime = 0.3f;
     float currentStunTimer = 0;
+
+    public bool hasInvinsibleTime;
+    public float invinsibleTime = 0.3f;
+    float currentInvinsibleTimer;
     // Start is called before the first frame update
     virtual protected void Start()
     {
@@ -31,6 +35,7 @@ public class HPCharacterController : MonoBehaviour
                 isStuned = false;
             }
         }
+        currentInvinsibleTimer += Time.deltaTime;
     }
 
 
@@ -40,6 +45,11 @@ public class HPCharacterController : MonoBehaviour
         {
             return;
         }
+        if(hasInvinsibleTime && currentInvinsibleTimer < invinsibleTime)
+        {
+            return;
+        }
+        currentInvinsibleTimer = 0;
         hp -= damage;
         hp = Mathf.Clamp(hp, 0, maxHp);
         hpBar.SetHealthBarValue(hp / (float)(maxHp));

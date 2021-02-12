@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance = null;
     public PlayerController player;
+    public int enemyMaxLevel = 3;
     private void Awake()
     {
         if (instance == null)

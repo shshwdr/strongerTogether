@@ -6,6 +6,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public float cooldownTime;
     float currentCooldownTimer;
+    public GameObject hitEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +20,8 @@ public class PlayerShooting : MonoBehaviour
         //{
         //    return;
         //}
-        //HandleAiming();
         HandleShooting();
+        currentCooldownTimer += Time.deltaTime;
     }
     public static Vector3 GetMouseWorldPositionWithZ(Vector3 screenPosition, Camera worldCamera)
     {
@@ -37,8 +38,14 @@ public class PlayerShooting : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePosition = GetMouseWorldPosition();
 
+            if (currentCooldownTimer < cooldownTime)
+            {
+                return;
+            }
+            currentCooldownTimer = 0;
+            Vector3 mousePosition = GetMouseWorldPosition();
+            GameObject hitEffectObject = Instantiate(hitEffect, mousePosition, Quaternion.identity);
             //aimAnimator.SetTrigger("Shoot");
             //GetComponents<AudioSource>()[0].PlayOneShot(shootClip);
 
