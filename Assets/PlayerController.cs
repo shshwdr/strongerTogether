@@ -16,8 +16,8 @@ public class PlayerController: HPCharacterController
 
 
 
-    private void Awake()
-    {
+   // private void Awake()
+    //{
         //if (instance == null)
 
         //    //if not, set instance to this
@@ -34,7 +34,7 @@ public class PlayerController: HPCharacterController
 
         ////Sets this to not be destroyed when reloading scene
         //DontDestroyOnLoad(gameObject);
-    }
+    //}
     // Start is called before the first frame update
     protected override void Start()
     {

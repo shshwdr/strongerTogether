@@ -194,6 +194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombieTiny (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5582731749714330136, guid: 2f3f4b52e0fe9c2419ccb501af47aaf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f3f4b52e0fe9c2419ccb501af47aaf9, type: 3}
 --- !u!4 &308615920 stripped
@@ -338,6 +343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Imp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281820176807701804, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a4c3bc8c652b042b81cf622dca24b0, type: 3}
@@ -497,7 +507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &677329462
 Transform:
   m_ObjectHideFlags: 0
@@ -586,6 +596,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Imp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281820176807701804, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a4c3bc8c652b042b81cf622dca24b0, type: 3}
@@ -1363,6 +1378,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombieTiny
       objectReference: {fileID: 0}
+    - target: {fileID: 5582731749714330136, guid: 2f3f4b52e0fe9c2419ccb501af47aaf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f3f4b52e0fe9c2419ccb501af47aaf9, type: 3}
 --- !u!4 &833813609 stripped
@@ -1444,6 +1464,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombieTiny (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5582731749714330136, guid: 2f3f4b52e0fe9c2419ccb501af47aaf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f3f4b52e0fe9c2419ccb501af47aaf9, type: 3}
 --- !u!4 &1065637397 stripped
@@ -1518,6 +1543,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: zombieTiny (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582731749714330136, guid: 2f3f4b52e0fe9c2419ccb501af47aaf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f3f4b52e0fe9c2419ccb501af47aaf9, type: 3}
@@ -4461,6 +4491,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Imp (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3281820176807701804, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a4c3bc8c652b042b81cf622dca24b0, type: 3}
 --- !u!1 &1486437451
@@ -5173,77 +5208,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Imp (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 88a4c3bc8c652b042b81cf622dca24b0, type: 3}
---- !u!1001 &1682103855
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
+    - target: {fileID: 3281820176807701804, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330131, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5582731749714330136, guid: 09fe755df43a17a42bfb018c55f7b4c8,
-        type: 3}
-      propertyPath: m_Name
-      value: zombieBoss
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 09fe755df43a17a42bfb018c55f7b4c8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 88a4c3bc8c652b042b81cf622dca24b0, type: 3}
 --- !u!1001 &2174674612621603304
 PrefabInstance:
   m_ObjectHideFlags: 0

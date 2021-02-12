@@ -16,7 +16,13 @@ public class HPCharacterController : MonoBehaviour
     public bool hasInvinsibleTime;
     public float invinsibleTime = 0.3f;
     float currentInvinsibleTimer;
+    protected EmotesController emotesController;
     // Start is called before the first frame update
+    virtual protected void Awake()
+    {
+
+        emotesController = GetComponentInChildren<EmotesController>();
+    }
     virtual protected void Start()
     {
 
@@ -70,4 +76,6 @@ public class HPCharacterController : MonoBehaviour
         isDead = true;
         Destroy(gameObject);
     }
+
+
 }

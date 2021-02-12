@@ -132,12 +132,13 @@ public class EnemyController : HPCharacterController
         //this is the main merger.
         other.isMerging = true;
         isMerging = true;
-
         //show merging effect
         //destory these two and create new monster
         Destroy(gameObject);
         Destroy(other.gameObject);
         GameObject mergedMonster = Instantiate(mergedToMonster, (transform.position + other.transform.position) / 2.0f, Quaternion.identity);
+
+        mergedMonster.GetComponent<EnemyController>().emotesController.showEmote(EmoteType.heart);
 
     }
 
