@@ -121,14 +121,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &1337939136942657032
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -175,6 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 10
   stunTime: 0.3
+  hasInvinsibleTime: 0
+  invinsibleTime: 0
   enemyType: 0
   mergeLevel: 0
   isMerging: 0
@@ -189,8 +191,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 0.1
+  m_Acceleration: 0.5
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

@@ -103,6 +103,10 @@ public class EnemyController : HPCharacterController
         {
             return false;
         }
+        if (other.enemyType != enemyType)
+        {
+            return false;
+        }
         return true;
     }
 
