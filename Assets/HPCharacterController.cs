@@ -7,7 +7,7 @@ public class HPCharacterController : MonoBehaviour
     public int maxHp = 10;
     int hp = 0;
     HPBarHandler hpBar;
-    protected bool isDead;
+    public  bool isDead;
     protected bool isStuned;
 
     public float stunTime = 0.3f;
@@ -25,7 +25,6 @@ public class HPCharacterController : MonoBehaviour
     }
     virtual protected void Start()
     {
-
         hp = maxHp;
         hpBar = GetComponentInChildren<HPBarHandler>();
     }
@@ -71,7 +70,7 @@ public class HPCharacterController : MonoBehaviour
         }
     }
 
-    void Die()
+    protected virtual void Die()
     {
         isDead = true;
         Destroy(gameObject);

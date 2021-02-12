@@ -94,6 +94,8 @@ public class PlayerController: HPCharacterController
         float speed = movement.sqrMagnitude;
         movement = Vector2.ClampMagnitude(movement, 1);
         animator.SetFloat("speed", movement.sqrMagnitude);
+
+
         base.Update();
         // transform
     }

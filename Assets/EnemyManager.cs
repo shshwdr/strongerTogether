@@ -8,6 +8,25 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager instance = null;
     public PlayerController player;
     public int enemyMaxLevel = 3;
+
+    public Dictionary<EnemyType, List<EnemyController>> enemiesDictionary;
+    public void updateEnemies()
+    {
+        float highestLevel = 0;
+        foreach(var enemyList in enemiesDictionary.Values)
+        {
+            foreach(var enemy in enemyList)
+            {
+                if (enemy &&!enemy.isDead&& enemy.mergeLevel > highestLevel)
+                {
+                    highestLevel = enemy.mergeLevel;
+                }
+            }
+        }
+        highestLevel += 0.5f;
+        FModSoundManager.Instance.SetAmbienceParamter(highestLevel);
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -34,7 +53,6 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public Dictionary<EnemyType, List<EnemyController>> enemiesDictionary;
     // Start is called before the first frame update
     void Start()
     {

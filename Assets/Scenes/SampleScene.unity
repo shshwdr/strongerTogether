@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -377,6 +378,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -445,6 +460,9 @@ GameObject:
   - component: {fileID: 591864874}
   - component: {fileID: 591864875}
   - component: {fileID: 591864876}
+  - component: {fileID: 591864877}
+  - component: {fileID: 591864878}
+  - component: {fileID: 591864879}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -492,6 +510,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemyMaxLevel: 2
+--- !u!114 &591864877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591864873}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/FMOD Test
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Intensity
+    Value: 2.16
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &591864878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591864873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 591864877}
+    Params: []
+  TriggerEvent: 0
+--- !u!114 &591864879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591864873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9bee76a02e8c4547b0d3cc56e02ba70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &677329461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,6 +1629,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 906301677}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1314329012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2174674611672211881, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2174674612621603304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1314329013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314329012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af432278ba7e2f4a93a57660f82d748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireDelay: 0.4
+  bulletPrefab: {fileID: 2792265183672566917, guid: e16ff2973239fa14bab17639daecdb31,
+    type: 3}
+  bulletSpeed: 5
+--- !u!114 &1314329022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314329012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df80a21e525a7214cbeb484948baa43e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 0.1
 --- !u!1 &1379571209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5231,6 +5338,11 @@ PrefabInstance:
       propertyPath: cooldownTime
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 18227394701027441, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2174674611672211872, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
         type: 3}
       propertyPath: m_RootOrder
@@ -5291,6 +5403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2174674611672211881, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2174674611672211885, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
         type: 3}
       propertyPath: invinsibleTime
@@ -5300,6 +5417,16 @@ PrefabInstance:
         type: 3}
       propertyPath: hasInvinsibleTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970226693808808630, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799171559823450980, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87fc9dfd1b99a9044af44c207ff7a71b, type: 3}

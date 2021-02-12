@@ -29,6 +29,7 @@ public class EnemyController : HPCharacterController
 
         EnemyManager.instance.enemiesDictionary[enemyType].Add(this);
         base.Start();
+        EnemyManager.instance.updateEnemies();
     }
 
     bool isBoss()
@@ -127,6 +128,7 @@ public class EnemyController : HPCharacterController
         }
     }
 
+
     public void Merge(EnemyController other)
     {
         //this is the main merger.
@@ -140,6 +142,13 @@ public class EnemyController : HPCharacterController
 
         mergedMonster.GetComponent<EnemyController>().emotesController.showEmote(EmoteType.heart);
 
+
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        EnemyManager.instance.updateEnemies();
     }
 
 }
