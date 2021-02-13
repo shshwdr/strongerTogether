@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class circleBullet : MonoBehaviour
 {
+    public float rotateSpeed = 100;
     Transform target;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +15,7 @@ public class circleBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(target.position, new Vector3(0, 0, 1), 100 * Time.deltaTime);
+        transform.RotateAround(target.position, new Vector3(0, 0, 1), rotateSpeed * Time.deltaTime);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

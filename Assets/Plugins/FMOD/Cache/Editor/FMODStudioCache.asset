@@ -19,7 +19,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8575913631633413948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,12 +80,12 @@ MonoBehaviour:
   Path: event:/FMOD Test
   guid: 27e171439c285849b3364ad156c1f2b8
   Banks:
-  - {fileID: 5374928934324183151}
+  - {fileID: -7379876488422962471}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -8594483811126343384}
+  - {fileID: 4446950301169988129}
   MinDistance: 0
   MaxDistance: 0
   Length: 13714
@@ -109,6 +109,49 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-7379876488422962471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/music/FMOD Test/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637486877446095191
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5488064970584691458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Level 2
+  m_EditorClassIdentifier: 
+  Path: event:/Level 2
+  guid: 3a52183330abeb4f86e9437613c131b7
+  Banks:
+  - {fileID: 1184728784686474447}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3278951681472200272}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 14883
 --- !u!114 &-4346852196896408201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +170,26 @@ MonoBehaviour:
   lastModified: 637486877446095191
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-3278951681472200272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level 2/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-2239364512920239929
 MonoBehaviour:
@@ -172,6 +235,27 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 798
+  Exists: 0
+--- !u!114 &-1513106524952315975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/music/FMOD Test/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637486877446095191
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 798
   Exists: 1
 --- !u!114 &-139352709340907920
 MonoBehaviour:
@@ -206,16 +290,16 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -1547965775716851497}
-  - {fileID: 5374928934324183151}
+  - {fileID: 9098512649073153269}
+  - {fileID: 1184728784686474447}
   EditorEvents:
-  - {fileID: -7756635897054732597}
+  - {fileID: -5488064970584691458}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 5374928934324183151}
+  - {fileID: 1184728784686474447}
   StringsBanks:
-  - {fileID: -1547965775716851497}
-  stringsBankWriteTime: 637487313343870150
+  - {fileID: 9098512649073153269}
+  stringsBankWriteTime: 637487548900250014
   cacheVersion: 6
 --- !u!114 &300158454274974096
 MonoBehaviour:
@@ -262,7 +346,46 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 13714
+--- !u!114 &1184728784686474447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/music/FMOD Test 3/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637487548900169988
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3307095288312914873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FMOD Test/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &4446950301169988129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,7 +423,7 @@ MonoBehaviour:
   lastModified: 637487313343770722
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &7030476059182028000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,4 +482,25 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 798
+  Exists: 1
+--- !u!114 &9098512649073153269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/music/FMOD Test 3/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637487548900250014
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 796
   Exists: 1

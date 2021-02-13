@@ -9,7 +9,7 @@ public class FModSoundManager : Singleton<FModSoundManager>
     // Start is called before the first frame update
     void Start()
     {
-        ambience = FMODUnity.RuntimeManager.CreateInstance("event:/FMOD Test");
+        ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Level 2");
         ambience.start();
     }
 
@@ -20,6 +20,7 @@ public class FModSoundManager : Singleton<FModSoundManager>
             print("set ambience to " + param);
             currentAmbienceIntensity = param;
             ambience.setParameterByName("Intensity", param);
+            //ambience.setParameterByName()
         }
     }
 
@@ -27,5 +28,10 @@ public class FModSoundManager : Singleton<FModSoundManager>
     void Update()
     {
         
+    }
+    private void OnDestroy()
+    {
+        ambience.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        //Destroy(ambience);
     }
 }

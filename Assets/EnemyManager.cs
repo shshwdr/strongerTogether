@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyType { Demons, Undeads, Orcs };
+public enum EnemyType { Demons, Undeads, Mushroom};
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance = null;
@@ -12,7 +12,7 @@ public class EnemyManager : MonoBehaviour
     public Dictionary<EnemyType, List<EnemyController>> enemiesDictionary;
     public void updateEnemies()
     {
-        float highestLevel = 0;
+        float highestLevel = -1;
         foreach(var enemyList in enemiesDictionary.Values)
         {
             foreach(var enemy in enemyList)
@@ -23,7 +23,7 @@ public class EnemyManager : MonoBehaviour
                 }
             }
         }
-        highestLevel += 0.5f;
+        highestLevel += 1.5f;
         FModSoundManager.Instance.SetAmbienceParamter(highestLevel);
     }
 

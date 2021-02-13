@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HPCharacterController : MonoBehaviour
 {
+    protected Animator animator;
     public int maxHp = 10;
     int hp = 0;
     HPBarHandler hpBar;
@@ -22,11 +23,12 @@ public class HPCharacterController : MonoBehaviour
     {
 
         emotesController = GetComponentInChildren<EmotesController>();
+        hpBar = GetComponentInChildren<HPBarHandler>();
+        animator = GetComponent<Animator>();
     }
     virtual protected void Start()
     {
         hp = maxHp;
-        hpBar = GetComponentInChildren<HPBarHandler>();
     }
 
     // Update is called once per frame

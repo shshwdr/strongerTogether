@@ -10,7 +10,6 @@ public class PlayerController: HPCharacterController
     public Rigidbody2D rb;
     Vector2 movement;
     public float moveSpeed = 5f;
-    Animator animator;
 
     bool facingRight = true;
 
@@ -40,7 +39,6 @@ public class PlayerController: HPCharacterController
     {
 
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
         EnemyManager.instance.player = this;
         base.Start();
     }

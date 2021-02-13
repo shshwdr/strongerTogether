@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyController : HPCharacterController
 {
-    Animator animator;
     NavMeshAgent agent;
 
     public EnemyType enemyType;
@@ -54,44 +53,47 @@ public class EnemyController : HPCharacterController
         if (isStuned)
         {
             agent.isStopped = true;
-            return;
+            //return;
         }
 
-        if (isMerging)
+        else if (isMerging)
         {
             //if far away, stop merging
-            return;
+            //return;
         }
 
         //move
-
-        //find the cloest target, either player or enemy with same type and merge level
-        float shortestDistance = getDistanceToTarget(EnemyManager.instance.player.transform);
-        Transform shortestTarget = EnemyManager.instance.player.transform;
-        foreach (EnemyController enemy in EnemyManager.instance.enemiesDictionary[enemyType])
+        else
         {
-            if (enemy == this)
+            //find the cloest target, either player or enemy with same type and merge level
+            float shortestDistance = getDistanceToTarget(EnemyManager.instance.player.transform);
+            Transform shortestTarget = EnemyManager.instance.player.transform;
+            foreach (EnemyController enemy in EnemyManager.instance.enemiesDictionary[enemyType])
             {
-                continue;
+                if (enemy == this)
+                {
+                    continue;
+                }
+                if (!enemy.canBePaired())
+                {
+                    continue;
+                }
+                if (enemy.mergeLevel != mergeLevel)
+                {
+                    continue;
+                }
+                float distance = getDistanceToTarget(enemy.transform);
+                if (distance < shortestDistance)
+                {
+                    shortestTarget = enemy.transform;
+                    shortestDistance = distance;
+                }
             }
-            if (!enemy.canBePaired())
-            {
-                continue;
-            }
-            if (enemy.mergeLevel != mergeLevel)
-            {
-                continue;
-            }
-            float distance = getDistanceToTarget(enemy.transform);
-            if (distance < shortestDistance)
-            {
-                shortestTarget = enemy.transform;
-                shortestDistance = distance;
-            }
-        }
 
-        agent.isStopped = false;
-        agent.SetDestination(shortestTarget.position);
+            agent.isStopped = false;
+            agent.SetDestination(shortestTarget.position);
+        }
+        animator.SetFloat("speed", agent.velocity.magnitude);
     }
 
     bool canBePairedWith(EnemyController other)
@@ -122,10 +124,10 @@ public class EnemyController : HPCharacterController
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isBoss() && collision.GetComponent<PlayerController>())
-        {
-            collision.GetComponent<PlayerController>().getDamage();
-        }
+        //if (isBoss() && collision.GetComponent<PlayerController>())
+        //{
+        //    collision.GetComponent<PlayerController>().getDamage();
+        //}
     }
 
 
