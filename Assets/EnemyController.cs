@@ -53,6 +53,7 @@ public class EnemyController : HPCharacterController
         if (isStuned)
         {
             agent.isStopped = true;
+            agent.velocity = Vector3.zero;
             //return;
         }
 

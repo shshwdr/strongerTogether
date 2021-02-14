@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118922596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.072, y: -0.108, z: 0}
+  m_LocalPosition: {x: -0.131, y: -0.144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1286743097309972595}
@@ -53,6 +53,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1703042459091262279, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.107
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077490685974887436, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.255
+      objectReference: {fileID: 0}
     - target: {fileID: 3281820176807701792, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
       propertyPath: m_Speed
@@ -64,6 +74,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 3004a307cf71cf74bb87ae48a121efa2,
         type: 2}
+    - target: {fileID: 3281820176807701796, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: maxHp
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3281820176807701796, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
       propertyPath: enemyType
