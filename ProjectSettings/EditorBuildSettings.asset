@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/level1.unity
+    path: Assets/Scenes/level1 - intro.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/level2.unity
-    guid: 94dde5ed07b07ba4f9f15616a32641ad
+    path: Assets/Scenes/level2 - merge.unity
+    guid: 2718a21f229b803418e767a2baf1cecc
   - enabled: 1
-    path: Assets/Scenes/level3.unity
-    guid: 86384621decb5f54cafcd488b6f7892b
+    path: Assets/Scenes/level3 - mushroom.unity
+    guid: 16e7422f5923cb644b82e0a8010a80d8
+  - enabled: 1
+    path: Assets/Scenes/level4 - combination.unity
+    guid: be0751563c5e77e4c8ec04afd6ce5acb
+  - enabled: 1
+    path: Assets/Scenes/level5 - larger room.unity
+    guid: 94dde5ed07b07ba4f9f15616a32641ad
   m_configObjects: {}

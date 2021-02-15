@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public bool isCheatOn = true;
-    int currentLevel;
+    public int currentLevel;
     // Start is called before the first frame update
     void Start()
     {
