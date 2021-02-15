@@ -15,6 +15,9 @@ public class EnemyController : HPCharacterController
 
     public GameObject mergedToMonster;
 
+    public float invincibleSpeedScale = 0.3f;
+    float originSpeed;
+    SpriteRenderer m_Renderer;
 
     //Rigidbody2D rb;
     // Start is called before the first frame update
@@ -29,6 +32,8 @@ public class EnemyController : HPCharacterController
         EnemyManager.instance.enemiesDictionary[enemyType].Add(this);
         base.Start();
         EnemyManager.instance.updateEnemies();
+        originSpeed = agent.speed;
+        m_Renderer = GetComponent<SpriteRenderer>();
     }
 
     bool isBoss()
@@ -69,6 +74,17 @@ public class EnemyController : HPCharacterController
             //find the cloest target, either player or enemy with same type and merge level
             float shortestDistance = getDistanceToTarget(EnemyManager.instance.player.transform);
             Transform shortestTarget = EnemyManager.instance.player.transform;
+            if (m_Renderer.isVisible)
+            {
+                agent.speed = originSpeed;
+            }
+            else
+            {
+                agent.speed = originSpeed * invincibleSpeedScale;
+
+                shortestTarget = transform;
+                shortestDistance = float.MaxValue;
+            }
             foreach (EnemyController enemy in EnemyManager.instance.enemiesDictionary[enemyType])
             {
                 if (enemy == this)

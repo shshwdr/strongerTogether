@@ -122,7 +122,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -167,6 +167,7 @@ MonoBehaviour:
   mergeLevel: 0
   isMerging: 0
   mergedToMonster: {fileID: 0}
+  invincibleSpeedScale: 0.05
 --- !u!195 &1337939136942657034
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class NavMeshTest : MonoBehaviour
 {
+    public float rebuildTime = 1;
+    float currentRebuildTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +16,12 @@ public class NavMeshTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        GetComponent<NavMeshSurface2d>().BuildNavMesh();
+        currentRebuildTimer += Time.deltaTime;
+        if (currentRebuildTimer > rebuildTime)
+        {
+            currentRebuildTimer = 0;
+            GetComponent<NavMeshSurface2d>().BuildNavMesh();
+        }
 
     }
 }

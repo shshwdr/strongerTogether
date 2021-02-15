@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1337939136942657030, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Name
-      value: zombieTiny
+      value: zombie1
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657031, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Speed
-      value: 0.1
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
@@ -130,5 +130,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5582731749714330136, guid: e4b1ee6e7fd994f41aa8c43198de47f6,
         type: 3}
+    - target: {fileID: 8321187208437621932, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d77390d53382134482583ecfe7f553e, type: 3}
