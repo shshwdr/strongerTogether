@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCheatOn: 1
-  currentLevel: 0
+  currentLevel: 1
 --- !u!114 &591864876
 MonoBehaviour:
   m_ObjectHideFlags: 0

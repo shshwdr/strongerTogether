@@ -17,6 +17,7 @@ public class DialogueEventHelper : Singleton<DialogueEventHelper>
     public void finishDialogue()
     {
         dialogueFinished = true;
+        EnemyManager.instance.updateLevel();
     }
     // Update is called once per frame
     void Update()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EmoteType { heart, angry};
+public enum EmoteType { heart, angry,happy, heartBreak,confused, shy};
 
 public class EmotesController : MonoBehaviour
 {
@@ -15,7 +15,11 @@ public class EmotesController : MonoBehaviour
         emoteDictionary = new Dictionary<EmoteType, string>()
         {
             { EmoteType.heart , "heart" },
-            { EmoteType.angry , "angry" }
+            { EmoteType.angry , "angry" },
+            { EmoteType.happy , "happy" },
+            { EmoteType.heartBreak , "heartBreak" },
+            { EmoteType.confused , "confused" },
+            { EmoteType.shy , "shy" },
         };
     }
     // Start is called before the first frame update
