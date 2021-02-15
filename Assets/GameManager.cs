@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     public bool isCheatOn = true;
     int currentLevel;
@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
+    }
+
+    public void GoToNextLevel()
+    {
+        currentLevel += 1;
+        GotoLevel(currentLevel);
     }
     public void GotoLevel(int level)
     {

@@ -10,6 +10,21 @@ public class EnemyManager : MonoBehaviour
     public int enemyMaxLevel = 3;
 
     public Dictionary<EnemyType, List<EnemyController>> enemiesDictionary;
+    public bool isLevelCleared = false;
+    public void updateLevel()
+    {
+        isLevelCleared = true;
+        foreach (var enemyList in enemiesDictionary.Values)
+        {
+            foreach (var enemy in enemyList)
+            {
+                if (enemy && !enemy.isDead )
+                {
+                    isLevelCleared = false;
+                }
+            }
+        }
+    }
     public void updateEnemies()
     {
         float highestLevel = -1;
@@ -25,6 +40,7 @@ public class EnemyManager : MonoBehaviour
         }
         highestLevel += 1.5f;
         FModSoundManager.Instance.SetAmbienceParamter(highestLevel);
+        updateLevel();
     }
 
     private void Awake()
