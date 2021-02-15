@@ -16,7 +16,7 @@ public class DoorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isOpened)
+        if (DialogueEventHelper.Instance.dialogueFinished && !isOpened)
         {
             if (EnemyManager.instance.isLevelCleared)
             {
