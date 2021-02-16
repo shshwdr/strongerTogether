@@ -29,6 +29,7 @@ public class EmotesController : MonoBehaviour
 
     public void showEmote(EmoteType emote, bool loop = false)
     {
+        CancelInvoke();
         if (loop)
         {
             StartCoroutine(showEmoteLoop(emote));

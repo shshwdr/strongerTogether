@@ -18,6 +18,7 @@ public class EnemyController : HPCharacterController
     public float invincibleSpeedScale = 0.3f;
     float originSpeed;
     SpriteRenderer m_Renderer;
+    EnemyController mergingOther;
 
     //Rigidbody2D rb;
     // Start is called before the first frame update
@@ -66,6 +67,7 @@ public class EnemyController : HPCharacterController
         {
             //if far away, stop merging
             //return;
+
         }
 
         //move
@@ -87,7 +89,11 @@ public class EnemyController : HPCharacterController
             }
             foreach (EnemyController enemy in EnemyManager.instance.enemiesDictionary[enemyType])
             {
-                if (enemy == this)
+                if (!enemy || enemy.isDead)
+                {
+                    continue;
+                }
+                    if (enemy == this)
                 {
                     continue;
                 }
@@ -142,6 +148,14 @@ public class EnemyController : HPCharacterController
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(isMerging && collision.GetComponent<EnemyController>() == mergingOther)
+        {
+            StopMerging();
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         //if (isBoss() && collision.GetComponent<PlayerController>())
@@ -149,23 +163,35 @@ public class EnemyController : HPCharacterController
         //    collision.GetComponent<PlayerController>().getDamage();
         //}
     }
+    void StopMerging() {
 
+        mergingOther.isMerging = false;
+        isMerging = false;
+        emotesController.showEmote(EmoteType.heartBreak);
+        mergingOther.emotesController.showEmote(EmoteType.heartBreak);
+        mergingOther = null;
+    }
 
     IEnumerator Merge(EnemyController other)
     {
         other.isMerging = true;
         isMerging = true;
+        mergingOther = other;
         emotesController.showEmote(EmoteType.heart,true);
         other.emotesController.showEmote(EmoteType.heart,true);
         yield return new WaitForSeconds(2);
-        //this is the main merger.
-        //show merging effect
-        //destory these two and create new monster
-        Destroy(gameObject);
-        Destroy(other.gameObject);
-        GameObject mergedMonster = Instantiate(mergedToMonster, (transform.position + other.transform.position) / 2.0f, Quaternion.identity);
+        if (isMerging)
+        {
 
-        mergedMonster.GetComponent<EnemyController>().emotesController.showEmote(EmoteType.happy);
+            //this is the main merger.
+            //show merging effect
+            //destory these two and create new monster
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+            GameObject mergedMonster = Instantiate(mergedToMonster, (transform.position + other.transform.position) / 2.0f, Quaternion.identity);
+
+            mergedMonster.GetComponent<EnemyController>().emotesController.showEmote(EmoteType.happy);
+        }
 
 
     }
