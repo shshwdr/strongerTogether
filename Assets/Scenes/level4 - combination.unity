@@ -1035,41 +1035,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 733985317}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1314329012 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2174674611672211881, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2174674612621603304}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1314329013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314329012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af432278ba7e2f4a93a57660f82d748, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireDelay: 0.4
-  bulletPrefab: {fileID: 2792265183672566917, guid: e16ff2973239fa14bab17639daecdb31,
-    type: 3}
-  bulletSpeed: 5
---- !u!114 &1314329022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314329012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df80a21e525a7214cbeb484948baa43e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownTime: 0.1
 --- !u!1001 &1316303543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5060,20 +5025,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1503039561, guid: 87fc9dfd1b99a9044af44c207ff7a71b, type: 3}
-      propertyPath: hitEffect
-      value: 
-      objectReference: {fileID: 2062981873138372108, guid: bbe6afd63e48a1847b8284ee53dfa64f,
-        type: 3}
-    - target: {fileID: 1503039561, guid: 87fc9dfd1b99a9044af44c207ff7a71b, type: 3}
-      propertyPath: cooldownTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 18227394701027441, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2174674611672211872, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
         type: 3}
       propertyPath: m_RootOrder
@@ -5133,31 +5084,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2174674611672211881, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2174674611672211885, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
-        type: 3}
-      propertyPath: invinsibleTime
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2174674611672211885, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
-        type: 3}
-      propertyPath: hasInvinsibleTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2970226693808808630, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6799171559823450980, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87fc9dfd1b99a9044af44c207ff7a71b, type: 3}

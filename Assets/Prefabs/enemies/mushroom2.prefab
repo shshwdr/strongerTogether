@@ -53,6 +53,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1253277914699357613, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3281820176807701792, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
       propertyPath: m_Speed
@@ -161,6 +166,12 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.32
       objectReference: {fileID: 0}
+    - target: {fileID: 7550343646544531981, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: dc4ace8b56a26e6489c0a6da788ab312,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a4c3bc8c652b042b81cf622dca24b0, type: 3}
 --- !u!1 &1286743097309972600 stripped

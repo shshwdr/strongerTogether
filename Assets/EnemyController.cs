@@ -33,7 +33,7 @@ public class EnemyController : HPCharacterController
         base.Start();
         EnemyManager.instance.updateEnemies();
         originSpeed = agent.speed;
-        m_Renderer = GetComponent<SpriteRenderer>();
+        m_Renderer = spriteObject. GetComponent<SpriteRenderer>();
     }
 
     bool isBoss()

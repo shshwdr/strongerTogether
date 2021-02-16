@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,8 +12,8 @@ public class PlayerController: HPCharacterController
     Vector2 movement;
     public float moveSpeed = 5f;
 
-    bool facingRight = true;
-
+    public GameObject meleeAttackCollider;
+    Vector3 originMeleeAttackPosition;
 
 
    // private void Awake()
@@ -40,6 +41,7 @@ public class PlayerController: HPCharacterController
 
         rb = GetComponent<Rigidbody2D>();
         EnemyManager.instance.player = this;
+        originMeleeAttackPosition = meleeAttackCollider.transform.localPosition;
         base.Start();
     }
 
@@ -95,20 +97,34 @@ public class PlayerController: HPCharacterController
 
 
         base.Update();
+
+
+        //melee prepare
+        if (speed > 0.01f)
+        {
+            meleeAttackCollider.SetActive(true);
+            var dir = new Vector3(movement.x, movement.y, 0)*0.08f;
+            // The shortcuts way
+            //meleeAttackCollider. transform.DOMove(transform.position + dir, 1);
+            // The generic way
+            DOTween.To(() => meleeAttackCollider.transform.localPosition, x => meleeAttackCollider.transform.localPosition = x, dir, 0.5f);
+
+            //DOTween.To(() => transform.position, x => transform.position = x, new Vector3(2, 2, 2), 1);
+
+        }
+        else
+        {
+
+            meleeAttackCollider.SetActive(false);
+            meleeAttackCollider.transform.localPosition = Vector3.zero;
+        }
         // transform
     }
     private void LateUpdate()
     {
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        if(facingRight == false && movement.x > 0)
-        {
-            flip();
-        }
-        if (facingRight == true && movement.x < 0)
-        {
-            flip();
-        }
+        testFlip(movement);
         // rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
     }
 
@@ -125,11 +141,4 @@ public class PlayerController: HPCharacterController
     //        DialogueManager.ShowAlert("You are camouflaged");
     //    }
     //}
-    void flip()
-    {
-        facingRight = !facingRight;
-        Vector3 scaler = transform.localScale;
-        scaler.x = -scaler.x;
-        transform.localScale = scaler;
-    }
 }

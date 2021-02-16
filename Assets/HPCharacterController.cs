@@ -18,13 +18,15 @@ public class HPCharacterController : MonoBehaviour
     public float invinsibleTime = 0.3f;
     float currentInvinsibleTimer;
     protected EmotesController emotesController;
+    protected GameObject spriteObject;
     // Start is called before the first frame update
     virtual protected void Awake()
     {
 
         emotesController = GetComponentInChildren<EmotesController>();
         hpBar = GetComponentInChildren<HPBarHandler>();
-        animator = GetComponent<Animator>();
+        animator = transform.Find("Sprites").GetComponent<Animator>();
+        spriteObject = animator.gameObject;
     }
     virtual protected void Start()
     {
@@ -79,4 +81,24 @@ public class HPCharacterController : MonoBehaviour
     }
 
 
+    bool facingRight = true;
+    void flip()
+    {
+        facingRight = !facingRight;
+        Vector3 scaler = spriteObject.transform.localScale;
+        scaler.x = -scaler.x;
+        spriteObject.transform.localScale = scaler;
+    }
+    public void testFlip(Vector3 movement)
+    {
+
+        if (facingRight == false && movement.x > 0)
+        {
+            flip();
+        }
+        if (facingRight == true && movement.x < 0)
+        {
+            flip();
+        }
+    }
 }

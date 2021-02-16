@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!58 &7213578327614465348
+--- !u!58 &5856851018352638437
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 574425625475371988}
+  m_GameObject: {fileID: 4224501062845075862}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -16,13 +16,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.05}
   serializedVersion: 2
   m_Radius: 0.04
---- !u!58 &5856851018352638437
+--- !u!58 &7213578327614465348
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4224501062845075862}
+  m_GameObject: {fileID: 574425625475371988}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -441,6 +441,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.089
       objectReference: {fileID: 0}
+    - target: {fileID: 3350263615430409863, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328185389864481063, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 1ea965598d3a5134882eee3abab967a6,
+        type: 2}
     - target: {fileID: 8321187208437621932, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Size.x

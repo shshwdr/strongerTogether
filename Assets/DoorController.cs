@@ -31,7 +31,7 @@ public class DoorController : MonoBehaviour
         if (isOpened)
         {
 
-            if (collision.collider.GetComponent<PlayerController>())
+            if (collision.collider.GetComponent<PlayerMeleeAttack>())
             {
                 GameManager.Instance.GoToNextLevel();
             }
