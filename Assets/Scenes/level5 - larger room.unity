@@ -825,7 +825,7 @@ MonoBehaviour:
   sequenceSpeaker: {fileID: 0}
   sequenceListener: {fileID: 0}
   waitOneFrameOnStartOrEnable: 1
-  alertMessage: Loog Room
+  alertMessage: Long Room
   textTable: {fileID: 0}
   alertDuration: 0
   sendMessages: []
