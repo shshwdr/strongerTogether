@@ -18,7 +18,7 @@ public class EnemyController : HPCharacterController
     public float invincibleSpeedScale = 0.3f;
     float originSpeed;
     SpriteRenderer m_Renderer;
-    EnemyController mergingOther;
+    protected EnemyController mergingOther;
 
     //Rigidbody2D rb;
     // Start is called before the first frame update
@@ -150,7 +150,7 @@ public class EnemyController : HPCharacterController
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(isMerging && collision.GetComponent<EnemyController>() == mergingOther)
+        if(isMerging &&  collision.GetComponent<EnemyController>() == mergingOther)
         {
             StopMerging();
         }
@@ -164,11 +164,14 @@ public class EnemyController : HPCharacterController
         //}
     }
     void StopMerging() {
-
-        mergingOther.isMerging = false;
+        if (mergingOther)
+        {
+            mergingOther.isMerging = false;
+            mergingOther.emotesController.showEmote(EmoteType.heartBreak);
+        }
         isMerging = false;
         emotesController.showEmote(EmoteType.heartBreak);
-        mergingOther.emotesController.showEmote(EmoteType.heartBreak);
+        mergingOther.mergingOther = null;
         mergingOther = null;
     }
 
@@ -177,6 +180,7 @@ public class EnemyController : HPCharacterController
         other.isMerging = true;
         isMerging = true;
         mergingOther = other;
+        other.mergingOther = this;
         emotesController.showEmote(EmoteType.heart,true);
         other.emotesController.showEmote(EmoteType.heart,true);
         yield return new WaitForSeconds(2);
