@@ -27,10 +27,38 @@ public class EmotesController : MonoBehaviour
     {
     }
 
-    public void showEmote(EmoteType emote)
+    public void showEmote(EmoteType emote, bool loop = false)
     {
-        var animationState = animator.GetCurrentAnimatorStateInfo(0);
+        if (loop)
+        {
+            StartCoroutine(showEmoteLoop(emote));
+            Invoke("showEmoteLoop2", 0.0f);
+        }
+        else
+        {
+
+            var animationState = animator.GetCurrentAnimatorStateInfo(0);
+            animator.SetTrigger(emoteDictionary[emote]);
+        }
+
+    }
+
+    IEnumerator showEmoteLoop(EmoteType emote)
+    {
         animator.SetTrigger(emoteDictionary[emote]);
+        //Debug.Log("wait anim " + animator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(0.3f);
+        showEmoteLoop(emote);
+    }
+
+    void showEmoteLoop2()
+    {
+        var emote = EmoteType.heart;
+        animator.SetTrigger(emoteDictionary[emote]);
+        //Debug.Log("wait anim " + animator.GetCurrentAnimatorStateInfo(0).length);
+        //yield return new WaitForSeconds(0.3f);
+        showEmoteLoop(emote);
+        Invoke("showEmoteLoop2", 0.5f);
     }
 
     // Update is called once per frame

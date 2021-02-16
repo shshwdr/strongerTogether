@@ -135,7 +135,9 @@ public class EnemyController : HPCharacterController
     {
         if(collision.GetComponent<EnemyController>()&& canBePairedWith(collision.GetComponent<EnemyController>()))
         {
-            Merge(collision.GetComponent<EnemyController>());
+
+
+            StartCoroutine( Merge(collision.GetComponent<EnemyController>()));
 
         }
     }
@@ -149,18 +151,21 @@ public class EnemyController : HPCharacterController
     }
 
 
-    public void Merge(EnemyController other)
+    IEnumerator Merge(EnemyController other)
     {
-        //this is the main merger.
         other.isMerging = true;
         isMerging = true;
+        emotesController.showEmote(EmoteType.heart,true);
+        other.emotesController.showEmote(EmoteType.heart,true);
+        yield return new WaitForSeconds(2);
+        //this is the main merger.
         //show merging effect
         //destory these two and create new monster
         Destroy(gameObject);
         Destroy(other.gameObject);
         GameObject mergedMonster = Instantiate(mergedToMonster, (transform.position + other.transform.position) / 2.0f, Quaternion.identity);
 
-        mergedMonster.GetComponent<EnemyController>().emotesController.showEmote(EmoteType.heart);
+        mergedMonster.GetComponent<EnemyController>().emotesController.showEmote(EmoteType.happy);
 
 
     }
