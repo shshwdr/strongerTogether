@@ -109,6 +109,7 @@ public class EnemyController : HPCharacterController
 
             agent.isStopped = false;
             agent.SetDestination(shortestTarget.position);
+            testFlip(agent.velocity);
         }
         animator.SetFloat("speed", agent.velocity.magnitude);
     }
