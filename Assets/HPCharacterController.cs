@@ -71,7 +71,9 @@ public class HPCharacterController : MonoBehaviour
         {
             isStuned = true;
             currentStunTimer = 0;
+            animator.SetTrigger("hit");
         }
+
     }
 
     protected virtual void Die()
