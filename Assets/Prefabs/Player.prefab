@@ -184,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5535976431579448158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.063, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2174674611672211872}
@@ -229,7 +229,8 @@ SpriteRenderer:
   m_SortingLayerID: -1184272079
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 809a9e455e7d4d148bbcd14ea36701dd, type: 3}
+  m_Sprite: {fileID: 2119751515082679053, guid: 3e3cd866607b0174882926e61f14e654,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -250,7 +251,7 @@ Animator:
   m_GameObject: {fileID: 5535976431579448158}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: e82afbcb22d95c643aff5f86441495d0, type: 2}
+  m_Controller: {fileID: 9100000, guid: df8cc7f0881089541b4a5535fa0dc3f2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -319,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df80a21e525a7214cbeb484948baa43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 0.3
+  cooldownTime: 0.5
 --- !u!1001 &3032480361465823877
 PrefabInstance:
   m_ObjectHideFlags: 0

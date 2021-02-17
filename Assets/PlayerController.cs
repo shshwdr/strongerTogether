@@ -117,9 +117,25 @@ public class PlayerController: HPCharacterController
 
             meleeAttackCollider.SetActive(false);
             meleeAttackCollider.transform.localPosition = Vector3.zero;
+            stopAttackAnim();
         }
         // transform
     }
+
+    public void attackAnim()
+    {
+        animator.SetBool("attack", true);
+        animator.SetFloat("attackHorizontal", movement.x);
+
+        animator.SetFloat("attackVertical", movement.y);
+    }
+
+    public void stopAttackAnim()
+    {
+
+        animator.SetBool("attack", false);
+    }
+
     private void LateUpdate()
     {
 

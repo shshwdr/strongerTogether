@@ -7,11 +7,11 @@ public class PlayerMeleeAttack : MonoBehaviour
     public float cooldownTime = 0.2f;
     float currentCooldownTimer;
 
-    
+    PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerController = GetComponentInParent<PlayerController>();
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -24,6 +24,8 @@ public class PlayerMeleeAttack : MonoBehaviour
             }
             currentCooldownTimer = 0;
             collision.collider.GetComponent<EnemyController>().getDamage();
+
+            playerController.attackAnim();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -34,5 +36,9 @@ public class PlayerMeleeAttack : MonoBehaviour
     {
 
         currentCooldownTimer += Time.deltaTime;
+        if (currentCooldownTimer >= 1.5 * cooldownTime)
+        {
+            playerController.stopAttackAnim();
+        }
     }
 }

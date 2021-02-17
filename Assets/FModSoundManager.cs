@@ -10,7 +10,7 @@ public class FModSoundManager : Singleton<FModSoundManager>
     void Start()
     {
         ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Level 2");
-        ambience.setVolume(0.2f);
+        ambience.setVolume(0.1f);
         ambience.start();
     }
 
