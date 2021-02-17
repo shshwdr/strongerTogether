@@ -14,26 +14,26 @@ public class PlayerController: HPCharacterController
 
     public GameObject meleeAttackCollider;
     Vector3 originMeleeAttackPosition;
-
+    bool firstClear = true;
 
    // private void Awake()
+   //{
+   //if (instance == null)
+
+    //    //if not, set instance to this
+    //    instance = this;
+
+    ////If instance already exists and it's not this:
+    //else if (instance != this)
     //{
-        //if (instance == null)
-
-        //    //if not, set instance to this
-        //    instance = this;
-
-        ////If instance already exists and it's not this:
-        //else if (instance != this)
-        //{
-        //    instance.gameObject.transform.position = transform.position;
-        //    //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-        //    Destroy(gameObject);
-        //}
+    //    instance.gameObject.transform.position = transform.position;
+    //    //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+    //    Destroy(gameObject);
+    //}
 
 
-        ////Sets this to not be destroyed when reloading scene
-        //DontDestroyOnLoad(gameObject);
+    ////Sets this to not be destroyed when reloading scene
+    //DontDestroyOnLoad(gameObject);
     //}
     // Start is called before the first frame update
     protected override void Start()
@@ -74,7 +74,10 @@ public class PlayerController: HPCharacterController
     // Update is called once per frame
     override protected void Update()
     {
-
+        if (isDead)
+        {
+            return;
+        }
         //if (GameManager.instance.isCheatOn && Input.GetKeyDown(KeyCode.M))
         //{
         //    GameOver();
@@ -86,6 +89,12 @@ public class PlayerController: HPCharacterController
         //    movement = Vector2.zero;
         //    return;
         //}
+
+        if (EnemyManager.instance.isLevelCleared && firstClear)
+        {
+            firstClear = false;
+            animator.SetTrigger("victory");
+        }
 
         movement.x = Input.GetAxisRaw("Horizontal");
 
@@ -138,7 +147,10 @@ public class PlayerController: HPCharacterController
 
     private void LateUpdate()
     {
-
+        if (isDead)
+        {
+            return;
+        }
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         testFlip(movement);
         // rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
@@ -157,4 +169,13 @@ public class PlayerController: HPCharacterController
     //        DialogueManager.ShowAlert("You are camouflaged");
     //    }
     //}
+    protected override void Die()
+    {
+        if (isDead)
+        {
+            return;
+        }
+        isDead = true;
+        animator.SetTrigger("die");
+    }
 }

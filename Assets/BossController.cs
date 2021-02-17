@@ -22,24 +22,35 @@ public class BossController : HPCharacterController
     public void selectNextSpawnId()
     {
         previousId = spawnId;
-        spawnId = Random.Range(0, 3);
-        while (spawnId == previousId)
+        spawnId += 1;//Random.Range(0, 3);
+        if(spawnId == 3)
         {
-            spawnId = Random.Range(0, 3);
+            spawnId = 0;
         }
+        //while (spawnId == previousId)
+        //{
+        //    spawnId = Random.Range(0, 3);
+        //}
+        Debug.Log("previous " + previousId + " now " + spawnId);
         agent.SetDestination(bossTargets.transform.GetChild(spawnId).transform.position);
-       
+        Debug.Log("remaining after select " + agent.remainingDistance);
     }
 
     IEnumerator spawn()
     {
+        Debug.Log("start spawn");
         isSpawning = true;
         animator.SetBool("spawn", true);
         EnemyManager.instance.spawnMinions(spawnPositions.transform.GetChild(spawnId).transform.position);
         yield return new WaitForSeconds(1);
         animator.SetBool("spawn", false);
+        Debug.Log("select next");
         selectNextSpawnId();
-        yield return new WaitForSeconds(0.1f); 
+        yield return new WaitForSeconds(1f);
+
+        Debug.Log("spawn finished");
+
+        Debug.Log("remaining after finishe " + agent.remainingDistance);
         isSpawning = false;
     }
     protected override void Start()
