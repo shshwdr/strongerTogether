@@ -520,6 +520,7 @@ MonoBehaviour:
   - {fileID: 1286743097309972600, guid: 6da01f45fb0f2734abe7843ab4b16d6c, type: 3}
   - {fileID: 3281820176807701804, guid: 88a4c3bc8c652b042b81cf622dca24b0, type: 3}
   - {fileID: 5582731749714330136, guid: 2f3f4b52e0fe9c2419ccb501af47aaf9, type: 3}
+  bossController: {fileID: 0}
 --- !u!114 &591864877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,7 +636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674205317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.381, y: 0.98, z: -1}
+  m_LocalPosition: {x: -0.314, y: 0.986, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1644250574}
@@ -16999,9 +17000,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 10
   isDead: 0
+  isStuned: 0
   stunTime: 0.3
   hasInvinsibleTime: 0
   invinsibleTime: 0.3
+  isSpawning: 0
 --- !u!1 &1483503085
 GameObject:
   m_ObjectHideFlags: 0
@@ -17835,7 +17838,43 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 0
+  - first: {x: 8, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 0
   - first: {x: -9, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 0
+  - first: {x: 8, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 0
+  - first: {x: 0, y: 10, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 0
+  - first: {x: 0, y: 11, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -17854,27 +17893,63 @@ Tilemap:
       m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
+  - first: {x: 8, y: 2, z: 0}
+    second:
+      m_AnimatedSprites:
+      - {fileID: 21300000, guid: 695c96d5f15f8f34a9bc336d7560ff15, type: 3}
+      - {fileID: 21300000, guid: 6088036a63c804040805e39dc5bf961e, type: 3}
+      - {fileID: 21300000, guid: 467299cafa189a34089e925ff0db6933, type: 3}
+      m_AnimationSpeed: 10
+      m_AnimationTimeOffset: 0
+      m_IsLooping: 1
   - first: {x: -9, y: 3, z: 0}
     second:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 5b88963f136ce4d4b81e287c35604d64, type: 3}
       - {fileID: 21300000, guid: b31e005c1ac320c45aff0f480f19721f, type: 3}
       - {fileID: 21300000, guid: b889734f2604872449138cc484ce2c38, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
+      m_AnimationTimeOffset: 0
+      m_IsLooping: 1
+  - first: {x: 8, y: 3, z: 0}
+    second:
+      m_AnimatedSprites:
+      - {fileID: 21300000, guid: 5b88963f136ce4d4b81e287c35604d64, type: 3}
+      - {fileID: 21300000, guid: b31e005c1ac320c45aff0f480f19721f, type: 3}
+      - {fileID: 21300000, guid: b889734f2604872449138cc484ce2c38, type: 3}
+      m_AnimationSpeed: 10
+      m_AnimationTimeOffset: 0
+      m_IsLooping: 1
+  - first: {x: 0, y: 10, z: 0}
+    second:
+      m_AnimatedSprites:
+      - {fileID: 21300000, guid: 695c96d5f15f8f34a9bc336d7560ff15, type: 3}
+      - {fileID: 21300000, guid: 6088036a63c804040805e39dc5bf961e, type: 3}
+      - {fileID: 21300000, guid: 467299cafa189a34089e925ff0db6933, type: 3}
+      m_AnimationSpeed: 10
+      m_AnimationTimeOffset: 0
+      m_IsLooping: 1
+  - first: {x: 0, y: 11, z: 0}
+    second:
+      m_AnimatedSprites:
+      - {fileID: 21300000, guid: 5b88963f136ce4d4b81e287c35604d64, type: 3}
+      - {fileID: 21300000, guid: b31e005c1ac320c45aff0f480f19721f, type: 3}
+      - {fileID: 21300000, guid: b889734f2604872449138cc484ce2c38, type: 3}
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
-  - m_RefCount: 1
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 4dd3f9fa6c280c944afe450a418ff18f, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 2954b4be4ab9cad4c8ca6bbe2f31d580, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
+  - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: b889734f2604872449138cc484ce2c38, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: 467299cafa189a34089e925ff0db6933, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 2
+  - m_RefCount: 6
     m_Data:
       e00: 1
       e01: 0
@@ -17893,13 +17968,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 2
+  - m_RefCount: 6
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -9, y: 0, z: 0}
-  m_Size: {x: 9, y: 4, z: 1}
+  m_Size: {x: 18, y: 12, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -18000,6 +18075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 2669005694635206802, guid: 0ef69b0d81222cd4a9972b19a079f38c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2669005694635206803, guid: 0ef69b0d81222cd4a9972b19a079f38c,
         type: 3}
       propertyPath: m_RootOrder
@@ -18053,6 +18133,11 @@ PrefabInstance:
     - target: {fileID: 2669005694635206803, guid: 0ef69b0d81222cd4a9972b19a079f38c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406364099448445117, guid: 0ef69b0d81222cd4a9972b19a079f38c,
+        type: 3}
+      propertyPath: m_ColliderPaths.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
