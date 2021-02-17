@@ -20,6 +20,8 @@ public class EnemyController : HPCharacterController
     SpriteRenderer m_Renderer;
     protected EnemyController mergingOther;
 
+    float offMergeDistance = 0;
+
     //Rigidbody2D rb;
     // Start is called before the first frame update
     protected override void Start()
@@ -35,6 +37,7 @@ public class EnemyController : HPCharacterController
         EnemyManager.instance.updateEnemies();
         originSpeed = agent.speed;
         m_Renderer = spriteObject. GetComponent<SpriteRenderer>();
+        offMergeDistance = GetComponent<CircleCollider2D>().radius * 2f;
     }
 
     bool isBoss()
@@ -67,7 +70,10 @@ public class EnemyController : HPCharacterController
         {
             //if far away, stop merging
             //return;
-
+            if ( (mergingOther.transform.position - transform.position).magnitude>= offMergeDistance)
+            {
+                StopMerging();
+            }
         }
 
         //move
@@ -150,10 +156,10 @@ public class EnemyController : HPCharacterController
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(isMerging &&  collision.GetComponent<EnemyController>() == mergingOther)
-        {
-            StopMerging();
-        }
+        //if(isMerging &&  collision.GetComponent<EnemyController>() == mergingOther)
+        //{
+        //    StopMerging();
+        //}
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -173,6 +179,7 @@ public class EnemyController : HPCharacterController
         emotesController.showEmote(EmoteType.heartBreak);
         mergingOther.mergingOther = null;
         mergingOther = null;
+        StopAllCoroutines();
     }
 
     IEnumerator Merge(EnemyController other)

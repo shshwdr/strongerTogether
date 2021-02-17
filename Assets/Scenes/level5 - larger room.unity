@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 342283557}
   - component: {fileID: 342283556}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Confine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,10 +327,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -6.581919, y: 2.315755}
-      - {x: -6.672956, y: -0.53593576}
-      - {x: -3.5849028, y: -0.5359358}
-      - {x: -3.6438684, y: 2.369539}
+    - - {x: -6.7068896, y: 2.406599}
+      - {x: -6.7183995, y: -0.5472913}
+      - {x: -3.5167372, y: -0.5359358}
+      - {x: -3.5529811, y: 2.3922498}
 --- !u!4 &342283557
 Transform:
   m_ObjectHideFlags: 0
@@ -782,6 +782,8 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyMaxLevel: 2
   isLevelCleared: 0
+  minionsToSpawn: []
+  bossController: {fileID: 0}
 --- !u!114 &591864877
 MonoBehaviour:
   m_ObjectHideFlags: 0

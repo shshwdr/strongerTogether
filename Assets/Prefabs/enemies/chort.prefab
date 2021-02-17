@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 1337939136942657031, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Radius
-      value: 0.09
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657031, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
@@ -301,12 +301,28 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3907487814232724076, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3907487814232724076, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ebc229d487d87e14896814ec83cf693d,
+        type: 3}
     - target: {fileID: 6328185389864481063, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 425db6e9de9be09459cb3abf56b6ecb1,
         type: 2}
+    - target: {fileID: 8321187208437621932, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 8321187208437621932, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Size.y

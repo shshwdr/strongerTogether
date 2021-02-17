@@ -41,7 +41,7 @@ public class GameManager : Singleton<GameManager>
                 //SceneManager.LoadScene(i);
             }
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (!EnemyManager.instance.player&& Input.GetKeyDown(KeyCode.R))
         {
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
