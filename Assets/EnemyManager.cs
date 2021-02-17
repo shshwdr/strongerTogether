@@ -11,6 +11,14 @@ public class EnemyManager : MonoBehaviour
 
     public Dictionary<EnemyType, List<EnemyController>> enemiesDictionary;
     public bool isLevelCleared = false;
+
+    public GameObject[] minionsToSpawn;
+
+    public void spawnMinions(Vector3 position)
+    {
+        var minionToSpawn = minionsToSpawn[Random.Range(0, 3)];
+        Instantiate(minionToSpawn, position, Quaternion.identity);
+    }
     public void updateLevel()
     {
         isLevelCleared = true;
