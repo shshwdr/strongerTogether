@@ -28,7 +28,7 @@ public class BossController : HPCharacterController
             spawnId = Random.Range(0, 3);
         }
         agent.SetDestination(bossTargets.transform.GetChild(spawnId).transform.position);
-        isSpawning = false;
+       
     }
 
     IEnumerator spawn()
@@ -39,20 +39,35 @@ public class BossController : HPCharacterController
         yield return new WaitForSeconds(1);
         animator.SetBool("spawn", false);
         selectNextSpawnId();
+        yield return new WaitForSeconds(0.1f); 
+        isSpawning = false;
     }
     protected override void Start()
     {
+        base.Start();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
         bossTargets = GameObject.Find("bossTarget");
         spawnPositions = GameObject.Find("spawnPosition");
+        EnemyManager.instance.bossController = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void spawnersDie()
     {
-        
+        getDamage();
+    }
+    public void spawnersMerge()
+    {
+        emotesController.showEmote(EmoteType.happy);
+    }
+
+    // Update is called once per framee
+    protected override void Update()
+    {
+        base.Update();
+
+        testFlip(agent.velocity);
     }
 }

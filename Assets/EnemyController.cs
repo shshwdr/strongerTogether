@@ -195,6 +195,10 @@ public class EnemyController : HPCharacterController
             GameObject mergedMonster = Instantiate(mergedToMonster, (transform.position + other.transform.position) / 2.0f, Quaternion.identity);
 
             mergedMonster.GetComponent<EnemyController>().emotesController.showEmote(EmoteType.happy);
+            if (EnemyManager.instance.bossController)
+            {
+                EnemyManager.instance.bossController.spawnersMerge();
+            }
         }
 
 
@@ -202,6 +206,10 @@ public class EnemyController : HPCharacterController
 
     protected override void Die()
     {
+        if (EnemyManager.instance.bossController)
+        {
+            EnemyManager.instance.bossController.spawnersDie();
+        }
         base.Die();
         EnemyManager.instance.updateEnemies();
     }

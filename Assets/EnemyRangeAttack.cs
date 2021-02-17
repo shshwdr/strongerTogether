@@ -9,10 +9,12 @@ public class EnemyRangeAttack : MonoBehaviour
     public float cooldownTime = 2f;
     public float bulletSpeed = 10f;
     float currentCooldownTimer;
+    EnemyController enemyController;
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyController = GetComponent<EnemyController>();
+
     }
 
     void Attack()
@@ -33,11 +35,13 @@ public class EnemyRangeAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentCooldownTimer += Time.deltaTime;
-        if (currentCooldownTimer > cooldownTime)
-        {
-            currentCooldownTimer = 0;
-            Attack();
+        if (!enemyController.isStuned){
+            currentCooldownTimer += Time.deltaTime;
+            if (currentCooldownTimer > cooldownTime)
+            {
+                currentCooldownTimer = 0;
+                Attack();
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ public class HPCharacterController : MonoBehaviour
     int hp = 0;
     HPBarHandler hpBar;
     public  bool isDead;
-    protected bool isStuned;
+    public  bool isStuned;
 
     public float stunTime = 0.3f;
     float currentStunTimer = 0;

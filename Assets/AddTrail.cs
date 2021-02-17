@@ -11,16 +11,18 @@ public class AddTrail : MonoBehaviour
     public Transform trailGenerateTransform;
     float currentTrailTimer = 0;
     NavMeshAgent agent;
+    EnemyController enemyController;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        enemyController = GetComponent<EnemyController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (agent.velocity.magnitude >= 0.01)
+        if (/*agent.velocity.magnitude >= 0.01*/!enemyController.isStuned)
         {
             if (currentTrailTimer >= generateTrailCooldown)
             {

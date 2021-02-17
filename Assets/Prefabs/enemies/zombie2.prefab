@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9081703958680354631, guid: deb3473b652cb674586b657ab22cbefd,
     type: 3}
-  cooldownTime: 1
+  cooldownTime: 2
   bulletSpeed: 1
 --- !u!1001 &6910923697822616606
 PrefabInstance:
@@ -103,12 +103,12 @@ PrefabInstance:
     - target: {fileID: 1337939136942657037, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.027498
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657037, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.28907672
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657037, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}

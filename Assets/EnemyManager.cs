@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
     public bool isLevelCleared = false;
 
     public GameObject[] minionsToSpawn;
+    public BossController bossController;
 
     public void spawnMinions(Vector3 position)
     {

@@ -16,6 +16,7 @@ public class EnemyBullet : MonoBehaviour
         if (collision.collider.GetComponent<PlayerController>())
         {
             collision.collider.GetComponent<PlayerController>().getDamage();
+            Destroy(gameObject);
         }
         else if (ignoreOtherCollider)
         {
@@ -28,6 +29,12 @@ public class EnemyBullet : MonoBehaviour
         if (collision.GetComponent<PlayerController>())
         {
             collision.GetComponent<PlayerController>().getDamage();
+            Destroy(gameObject);
+        }
+        else if (collision. GetComponentInParent<PlayerController>())
+        {
+            collision.GetComponentInParent<PlayerController>().getDamage();
+            Destroy(gameObject);
         }
     }
 }
