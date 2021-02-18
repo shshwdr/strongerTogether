@@ -17,7 +17,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
 
-        if (collision.collider.GetComponent<EnemyController>())
+        if (collision.collider.GetComponent<EnemyController>() )
         {
             if (currentCooldownTimer < cooldownTime)
             {
@@ -29,6 +29,20 @@ public class PlayerMeleeAttack : MonoBehaviour
             playerController.attackAnim();
             AudioManager.Instance.playPlayerAttack();
             
+        }
+
+        if (collision.collider.GetComponent<BossController>())
+        {
+            if (currentCooldownTimer < cooldownTime)
+            {
+                return;
+            }
+            currentCooldownTimer = 0;
+            collision.collider.GetComponent<BossController>().getDamage();
+
+            playerController.attackAnim();
+            AudioManager.Instance.playPlayerAttack();
+
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

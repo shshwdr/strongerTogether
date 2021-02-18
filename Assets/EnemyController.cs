@@ -70,7 +70,7 @@ public class EnemyController : HPCharacterController
         {
             //if far away, stop merging
             //return;
-            if ( (mergingOther.transform.position - transform.position).magnitude>= offMergeDistance)
+            if (!mergingOther || mergingOther.isDead||(mergingOther.transform.position - transform.position).magnitude>= offMergeDistance)
             {
                 StopMerging();
             }

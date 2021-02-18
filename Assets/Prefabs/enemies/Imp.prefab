@@ -151,6 +151,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657038, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
+      propertyPath: maxHp
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337939136942657038, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
       propertyPath: mergedToMonster
       value: 
       objectReference: {fileID: 3281820176807701804, guid: 33b21a5ed6b2c794cbd1975e45139924,

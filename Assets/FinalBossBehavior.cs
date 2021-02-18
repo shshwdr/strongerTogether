@@ -10,7 +10,6 @@ public class FinalBossBehavior : StateMachineBehaviour
     {
 
         bossController = animator.GetComponentInParent<BossController>();
-        bossController.Revive();
         bossController.ChasePlayer();
     }
 

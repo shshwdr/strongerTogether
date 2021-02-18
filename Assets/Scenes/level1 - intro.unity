@@ -398,7 +398,7 @@ MonoBehaviour:
   sequenceSpeaker: {fileID: 0}
   sequenceListener: {fileID: 0}
   waitOneFrameOnStartOrEnable: 1
-  alertMessage: Intro
+  alertMessage: 
   textTable: {fileID: 0}
   alertDuration: 0
   sendMessages: []

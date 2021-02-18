@@ -16,10 +16,11 @@ public class BossController : HPCharacterController
     public int[] maxHps;
     int maxStage = 2;
     int stage = 0;
-    bool isDashing;
+    public bool isDashing;
     float dashTime = 2f;
     float currentDashTimer;
     BoxCollider2D solidCollider;
+    public GameObject dashColliderObject;
     // Start is called before the first frame update
 
     public void spawnPublic()
@@ -35,6 +36,7 @@ public class BossController : HPCharacterController
 
     public void spawnPublic2()
     {
+        Debug.Log("spawn public 2");
         StartCoroutine(spawn2());
     }
 
@@ -67,36 +69,35 @@ public class BossController : HPCharacterController
         animator.SetBool("spawn", true);
         EnemyManager.instance.spawnMinions(spawnPositions.transform.GetChild(spawnId).transform.position);
         yield return new WaitForSeconds(1);
-        animator.SetBool("spawn", false);
-        Debug.Log("select next");
-        selectNextSpawnIdAndMove();
         yield return new WaitForSeconds(1f);
 
-        Debug.Log("spawn finished");
-
-        Debug.Log("remaining after finishe " + agent.remainingDistance);
+        animator.SetBool("spawn", false);
+        Debug.Log("select next");
+        //selectNextSpawnIdAndMove();
         isSpawning = false;
     }
     IEnumerator spawn2()
     {
-        Debug.Log("start spawn");
+        Debug.Log("start spawn 2");
         isSpawning = true;
         isDashing = false;
-
+        dashColliderObject.SetActive(false);
         solidCollider.enabled = true;
         animator.SetBool("spawn", true);
         EnemyManager.instance.spawnMinions(spawnPositions.transform.GetChild(spawnId).transform.position);
         yield return new WaitForSeconds(2);
+
+        //yield return new WaitForSeconds(1f);
+
+        Debug.Log("finish spawn 2");
         animator.SetBool("spawn", false);
         //Debug.Log("select next");
         selectNextSpawnId();
-        yield return new WaitForSeconds(1f);
-
         //Debug.Log("spawn finished");
 
         //Debug.Log("remaining after finishe " + agent.remainingDistance);
         isSpawning = false;
-        dashToPlayer();
+        //dashToPlayer();
     }
     protected override void Start()
     {
@@ -119,6 +120,8 @@ public class BossController : HPCharacterController
     public void spawnersMerge()
     {
         emotesController.showEmote(EmoteType.happy);
+        Heal();
+        //show heal effect
     }
 
     // Update is called once per framee
@@ -126,8 +129,15 @@ public class BossController : HPCharacterController
     {
         base.Update();
         currentDashTimer += Time.deltaTime;
+        if(stage != 1)
+        {
 
-        testFlip(agent.velocity);
+            testFlip(agent.velocity);
+        }
+        else
+        {
+            testFlip(rb.velocity);
+        }
     }
     protected override void Die()
     {
@@ -138,7 +148,13 @@ public class BossController : HPCharacterController
         isDead = true;
         agent.isStopped = true;
         isSpawning = false;
+        animator.SetBool("spawn", false);
+        isDashing = false;
+        dashColliderObject.SetActive(false);
+        rb.velocity = Vector3.zero;
         StopAllCoroutines();
+
+        EnemyManager.instance.updateEnemies();
         if (stage != maxStage)
         {
             //go to next stage
@@ -153,28 +169,11 @@ public class BossController : HPCharacterController
             AudioManager.Instance.playBossDefeat();
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        var collider = collision.collider;
-        if (isDashing && collider.GetComponent<FakeObstacles>())
-        {
-            collider.GetComponent<FakeObstacles>().getCollide(Vector3.zero);
-        }
-        if (isDashing && collider.GetComponent<PlayerController>())
-        {
-            collider.GetComponent<PlayerController>().getDamage();
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (isDashing&& collision.GetComponent<FakeObstacles>())
-        {
-            collision.GetComponent<FakeObstacles>().getCollide(Vector3.zero);
-        }
-    }
+    
 
     public void dashToPlayer()
     {
+        Debug.Log("dash to player");
         var playerPosition = EnemyManager.instance.player.transform.position;
         var dir = (playerPosition - transform.position).normalized;
 
@@ -185,6 +184,8 @@ public class BossController : HPCharacterController
         rb.AddForce(dir * 100);
         //rb.DOMove(targetPosition, dashTime);
         isDashing = true;
+
+        dashColliderObject.SetActive(true);
         //solidCollider.enabled = false;
         currentDashTimer = 0;
     }
@@ -192,6 +193,12 @@ public class BossController : HPCharacterController
     public bool isDashFinished()
     {
         return currentDashTimer >= dashTime;
+    }
+
+    public void Heal(int healing = 1)
+    {
+        hp += healing;
+        updateHP();
     }
 
     public void Revive()

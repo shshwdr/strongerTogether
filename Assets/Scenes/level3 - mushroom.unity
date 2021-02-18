@@ -428,6 +428,8 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyMaxLevel: 2
   isLevelCleared: 0
+  minionsToSpawn: []
+  bossController: {fileID: 0}
 --- !u!114 &591864877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +473,7 @@ MonoBehaviour:
   sequenceSpeaker: {fileID: 0}
   sequenceListener: {fileID: 0}
   waitOneFrameOnStartOrEnable: 1
-  alertMessage: Mushroom
+  alertMessage: 
   textTable: {fileID: 0}
   alertDuration: 0
   sendMessages: []

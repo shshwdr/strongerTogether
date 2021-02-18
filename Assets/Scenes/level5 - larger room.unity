@@ -839,7 +839,7 @@ MonoBehaviour:
   sequenceSpeaker: {fileID: 0}
   sequenceListener: {fileID: 0}
   waitOneFrameOnStartOrEnable: 1
-  alertMessage: Long Room
+  alertMessage: 
   textTable: {fileID: 0}
   alertDuration: 0
   sendMessages: []
@@ -18671,7 +18671,7 @@ PrefabInstance:
     - target: {fileID: 2174674611672211885, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
         type: 3}
       propertyPath: maxHp
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87fc9dfd1b99a9044af44c207ff7a71b, type: 3}
