@@ -6,10 +6,14 @@ public class HPCharacterController : MonoBehaviour
 {
     protected Animator animator;
     public int maxHp = 10;
-    int hp = 0;
+    protected int hp = 0;
     HPBarHandler hpBar;
     public  bool isDead;
     public  bool isStuned;
+
+    public AudioClip[] beHitClips;
+
+    public Rigidbody2D rb;
 
     public float stunTime = 0.3f;
     float currentStunTimer = 0;
@@ -27,6 +31,7 @@ public class HPCharacterController : MonoBehaviour
         hpBar = GetComponentInChildren<HPBarHandler>();
         animator = transform.Find("Sprites").GetComponent<Animator>();
         spriteObject = animator.gameObject;
+        rb = GetComponent<Rigidbody2D>();
     }
     virtual protected void Start()
     {
@@ -47,6 +52,12 @@ public class HPCharacterController : MonoBehaviour
         currentInvinsibleTimer += Time.deltaTime;
     }
 
+    public void updateHP()
+    {
+
+        hp = Mathf.Clamp(hp, 0, maxHp);
+        hpBar.SetHealthBarValue(hp / (float)(maxHp));
+    }
 
     public void getDamage(int damage = 1)
     {
@@ -60,9 +71,7 @@ public class HPCharacterController : MonoBehaviour
         }
         currentInvinsibleTimer = 0;
         hp -= damage;
-        hp = Mathf.Clamp(hp, 0, maxHp);
-        hpBar.SetHealthBarValue(hp / (float)(maxHp));
-
+        updateHP();
         if (hp == 0)
         {
             Die();

@@ -1,38 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class BossMoveToSpawn : StateMachineBehaviour
+public class BossDashToPlayer : StateMachineBehaviour
 {
     BossController bossController;
-
-    NavMeshAgent agent;
-    //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         bossController = animator.GetComponentInParent<BossController>();
-        agent = animator.GetComponentInParent<NavMeshAgent>();
-        bossController.selectNextSpawnIdAndMove();
+        bossController.Revive();
+        bossController.dashToPlayer();
     }
 
-
-    //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (agent.remainingDistance <= 0.1f&& !bossController.isSpawning)
+        if (bossController.isDashFinished() && !bossController.isSpawning)
         {
-            bossController.spawnPublic();
+            bossController.spawnPublic2();
         }
     }
 
-    
-
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

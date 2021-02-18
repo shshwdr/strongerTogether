@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1503039561}
   - component: {fileID: 1314329013}
   - component: {fileID: 1314329022}
+  - component: {fileID: 6287204024534072985}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -56,10 +57,11 @@ MonoBehaviour:
   maxHp: 10
   isDead: 0
   isStuned: 0
+  beHitClips: []
+  rb: {fileID: 0}
   stunTime: 0.3
   hasInvinsibleTime: 1
   invinsibleTime: 0.3
-  rb: {fileID: 0}
   moveSpeed: 1
   meleeAttackCollider: {fileID: 5580125482426150399}
 --- !u!50 &2174674611672211884
@@ -159,6 +161,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 0.3
+--- !u!114 &6287204024534072985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2174674611672211881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd454d7f9ff30048b735846c7b3a656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAttackClips:
+  - {fileID: 8300000, guid: 899cb4376e9548643be56cb97227033a, type: 3}
+  - {fileID: 8300000, guid: 1136095386d1b954d97d26abec070cac, type: 3}
+  - {fileID: 8300000, guid: 4549bc49c1a70574d8c9fe6002355769, type: 3}
 --- !u!1 &5535976431579448158
 GameObject:
   m_ObjectHideFlags: 0

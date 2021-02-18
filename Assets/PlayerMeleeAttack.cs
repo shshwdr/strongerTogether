@@ -8,6 +8,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     float currentCooldownTimer;
 
     PlayerController playerController;
+    int currentAttackClip = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,8 @@ public class PlayerMeleeAttack : MonoBehaviour
             collision.collider.GetComponent<EnemyController>().getDamage();
 
             playerController.attackAnim();
+            AudioManager.Instance.playPlayerAttack();
+            
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

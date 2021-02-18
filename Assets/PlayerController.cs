@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class PlayerController: HPCharacterController
 {
    // public static Player instance = null;
-    public Rigidbody2D rb;
     Vector2 movement;
     public float moveSpeed = 5f;
 
@@ -39,7 +38,6 @@ public class PlayerController: HPCharacterController
     protected override void Start()
     {
 
-        rb = GetComponent<Rigidbody2D>();
         EnemyManager.instance.player = this;
         originMeleeAttackPosition = meleeAttackCollider.transform.localPosition;
         base.Start();

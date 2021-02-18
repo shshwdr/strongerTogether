@@ -99,6 +99,7 @@ public class EnemyManager : MonoBehaviour
                     }
                 }
             }
+            bossController.getDamage(10000);
 
         }
     }
