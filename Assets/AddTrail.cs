@@ -8,15 +8,15 @@ public class AddTrail : MonoBehaviour
     public GameObject trail;
     public float destoryTrailTime = 5f;
     public float generateTrailCooldown = 0.5f;
-    public Transform trailGenerateTransform;
+   // public Transform trailGenerateTransform;
     float currentTrailTimer = 0;
     NavMeshAgent agent;
-    EnemyController enemyController;
+    HPCharacterController enemyController;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        enemyController = GetComponent<EnemyController>();
+        enemyController = GetComponentInParent<HPCharacterController>();
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class AddTrail : MonoBehaviour
         {
             if (currentTrailTimer >= generateTrailCooldown)
             {
-                GameObject instance = Instantiate(trail, trailGenerateTransform.position, Quaternion.identity);
+                GameObject instance = Instantiate(trail, transform.position, Quaternion.identity);
                 Destroy(instance, destoryTrailTime);
                 currentTrailTimer -= generateTrailCooldown;
             }

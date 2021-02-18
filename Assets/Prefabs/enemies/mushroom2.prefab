@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 37217096}
+  - component: {fileID: 7758660628563573220}
   m_Layer: 8
   m_Name: TrailTransform
   m_TagString: Untagged
@@ -23,20 +24,20 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37217095}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -0.144, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.06999999, y: -0.144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1286743097309972595}
-  m_RootOrder: 2
+  m_Father: {fileID: 3257432424286697721}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &889479344
+--- !u!114 &7758660628563573220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286743097309972600}
+  m_GameObject: {fileID: 37217095}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 585ffbab4c18a36419745c53263291ab, type: 3}
@@ -45,7 +46,6 @@ MonoBehaviour:
   trail: {fileID: 4636577001566514028, guid: 9b08da912edec784c9adb5b4b7e4e009, type: 3}
   destoryTrailTime: 4
   generateTrailCooldown: 0.4
-  trailGenerateTransform: {fileID: 37217096}
 --- !u!1001 &4346026518154962260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,7 +56,7 @@ PrefabInstance:
     - target: {fileID: 1253277914699357613, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3281820176807701792, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
@@ -72,7 +72,7 @@ PrefabInstance:
     - target: {fileID: 3281820176807701796, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
       propertyPath: maxHp
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3281820176807701796, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
@@ -174,15 +174,9 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a4c3bc8c652b042b81cf622dca24b0, type: 3}
---- !u!1 &1286743097309972600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3281820176807701804, guid: 88a4c3bc8c652b042b81cf622dca24b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 4346026518154962260}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1286743097309972595 stripped
+--- !u!4 &3257432424286697721 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3281820176807701799, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+  m_CorrespondingSourceObject: {fileID: 1253277914699357613, guid: 88a4c3bc8c652b042b81cf622dca24b0,
     type: 3}
   m_PrefabInstance: {fileID: 4346026518154962260}
   m_PrefabAsset: {fileID: 0}
