@@ -206,6 +206,7 @@ public class EnemyController : HPCharacterController
             {
                 EnemyManager.instance.bossController.spawnersMerge();
             }
+            AudioManager.Instance.playMerge();
         }
 
 

@@ -58,7 +58,10 @@ public class HPCharacterController : MonoBehaviour
         hp = Mathf.Clamp(hp, 0, maxHp);
         hpBar.SetHealthBarValue(hp / (float)(maxHp));
     }
+    virtual protected void playHurtSound()
+    {
 
+    }
     public void getDamage(int damage = 1)
     {
         if (isDead)
@@ -71,6 +74,7 @@ public class HPCharacterController : MonoBehaviour
         }
         currentInvinsibleTimer = 0;
         hp -= damage;
+        playHurtSound();
         updateHP();
         if (hp == 0)
         {

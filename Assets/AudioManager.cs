@@ -6,6 +6,13 @@ public class AudioManager : Singleton<AudioManager>
 {
     AudioSource audio;
     public AudioClip[] playerAttackClips;
+    public AudioClip[] bossDamage;
+    public AudioClip bossDefeated;
+    public AudioClip gameover;
+    public AudioClip victory;
+    public AudioClip merge;
+
+    public AudioClip[] playerHurt;
     Dictionary<AudioClip, int> clipToId;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +21,7 @@ public class AudioManager : Singleton<AudioManager>
         clipToId = new Dictionary<AudioClip, int>();
     }
 
-    public void playMultipleClips(AudioClip[] clips)
+     void playMultipleClips(AudioClip[] clips)
     {
         var firstClip = clips[0];
         if (!clipToId.ContainsKey(firstClip))
@@ -33,8 +40,33 @@ public class AudioManager : Singleton<AudioManager>
     {
         playMultipleClips(playerAttackClips);
     }
+    public void playPlayerHurt()
+    {
+        playMultipleClips(playerHurt);
+    }
+    public void playBossDamage()
+    {
+        playMultipleClips(bossDamage);
+    }
+    public void playVicotry()
+    {
+        playAudio(victory);
+    }
+    public void playGameOver()
+    {
+        playAudio(gameover);
+    }
+    public void playMerge()
+    {
+        playAudio(merge);
+    }
+    public void playBossDefeat()
+    {
+        playAudio(bossDefeated);
+    }
 
-    public void playAudio(AudioClip clip)
+    
+    void playAudio(AudioClip clip)
     {
         audio.PlayOneShot(clip);
     }

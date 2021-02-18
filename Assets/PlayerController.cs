@@ -128,6 +128,11 @@ public class PlayerController: HPCharacterController
         }
         // transform
     }
+    override protected void playHurtSound()
+    {
+
+        AudioManager.Instance.playPlayerHurt();
+    }
 
     public void attackAnim()
     {
@@ -175,5 +180,7 @@ public class PlayerController: HPCharacterController
         }
         isDead = true;
         animator.SetTrigger("die");
+
+        AudioManager.Instance.playGameOver();
     }
 }
