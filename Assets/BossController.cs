@@ -13,16 +13,24 @@ public class BossController : HPCharacterController
     int spawnId = -1;
     int previousId = -1;
     public bool isSpawning = false;
-
+    public int[] maxHps;
     int maxStage = 2;
     int stage = 0;
     bool isDashing;
-    Vector3 dashTarget;
+    float dashTime = 2f;
+    float currentDashTimer;
+    BoxCollider2D solidCollider;
     // Start is called before the first frame update
 
     public void spawnPublic()
     {
         StartCoroutine(spawn());
+    }
+
+    public void ChasePlayer()
+    {
+        agent.isStopped = false;
+        agent.SetDestination(EnemyManager.instance.player.transform.position);
     }
 
     public void spawnPublic2()
@@ -74,23 +82,27 @@ public class BossController : HPCharacterController
         Debug.Log("start spawn");
         isSpawning = true;
         isDashing = false;
+
+        solidCollider.enabled = true;
         animator.SetBool("spawn", true);
         EnemyManager.instance.spawnMinions(spawnPositions.transform.GetChild(spawnId).transform.position);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         animator.SetBool("spawn", false);
-        Debug.Log("select next");
+        //Debug.Log("select next");
         selectNextSpawnId();
         yield return new WaitForSeconds(1f);
 
-        Debug.Log("spawn finished");
+        //Debug.Log("spawn finished");
 
-        Debug.Log("remaining after finishe " + agent.remainingDistance);
+        //Debug.Log("remaining after finishe " + agent.remainingDistance);
         isSpawning = false;
         dashToPlayer();
     }
     protected override void Start()
     {
+        maxHp = maxHps[stage];
         base.Start();
+        solidCollider = GetComponent<BoxCollider2D>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -113,19 +125,32 @@ public class BossController : HPCharacterController
     protected override void Update()
     {
         base.Update();
+        currentDashTimer += Time.deltaTime;
 
         testFlip(agent.velocity);
     }
     protected override void Die()
     {
+        if (isDead)
+        {
+            return;
+        }
         isDead = true;
         agent.isStopped = true;
+        isSpawning = false;
         StopAllCoroutines();
         if (stage != maxStage)
         {
             //go to next stage
             stage++;
             animator.SetTrigger("die");
+
+            AudioManager.Instance.playBossDamage(stage);
+        }
+        else
+        {
+            Destroy(gameObject);
+            AudioManager.Instance.playBossDefeat();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -134,6 +159,10 @@ public class BossController : HPCharacterController
         if (isDashing && collider.GetComponent<FakeObstacles>())
         {
             collider.GetComponent<FakeObstacles>().getCollide(Vector3.zero);
+        }
+        if (isDashing && collider.GetComponent<PlayerController>())
+        {
+            collider.GetComponent<PlayerController>().getDamage();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -147,18 +176,28 @@ public class BossController : HPCharacterController
     public void dashToPlayer()
     {
         var playerPosition = EnemyManager.instance.player.transform.position;
-        dashTarget = playerPosition;
-        rb.DOMove(playerPosition, 1f);
+        var dir = (playerPosition - transform.position).normalized;
+
+        //int layerMask = 1 << 12;
+        //layerMask = ~layerMask;
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 12.0f, layerMask);
+        var targetPosition = playerPosition+dir*0.2f;
+        rb.AddForce(dir * 100);
+        //rb.DOMove(targetPosition, dashTime);
         isDashing = true;
+        //solidCollider.enabled = false;
+        currentDashTimer = 0;
     }
 
     public bool isDashFinished()
     {
-        return ((Vector2) transform.position - (Vector2)dashTarget).magnitude <= 0.05f;
+        return currentDashTimer >= dashTime;
     }
 
     public void Revive()
     {
+
+        maxHp = maxHps[stage];
         isDead = false;
         hp = maxHp;
         updateHP();

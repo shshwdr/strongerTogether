@@ -44,9 +44,9 @@ public class AudioManager : Singleton<AudioManager>
     {
         playMultipleClips(playerHurt);
     }
-    public void playBossDamage()
+    public void playBossDamage(int stage)
     {
-        playMultipleClips(bossDamage);
+        playAudio(bossDamage[stage]);
     }
     public void playVicotry()
     {

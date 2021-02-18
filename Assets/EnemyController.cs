@@ -147,10 +147,7 @@ public class EnemyController : HPCharacterController
     {
         if(collision.GetComponent<EnemyController>()&& canBePairedWith(collision.GetComponent<EnemyController>()))
         {
-
-
             StartCoroutine( Merge(collision.GetComponent<EnemyController>()));
-
         }
     }
 

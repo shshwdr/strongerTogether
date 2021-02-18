@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4491683080840881549}
   - component: {fileID: 4491683080840881548}
   - component: {fileID: 4491683080840881550}
+  - component: {fileID: -8902547575643373044}
   m_Layer: 0
   m_Name: wall_column_top
   m_TagString: obstacle
@@ -133,3 +134,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8370c7ebc5f9e145b2ddd57dc8bbf42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8902547575643373044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4491683080840881545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
