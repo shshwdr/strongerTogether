@@ -34,5 +34,20 @@ public class BossDashCollider : MonoBehaviour
         {
             collision.GetComponent<FakeObstacles>().getCollide(Vector3.zero);
         }
+        if (bossController.isDashing && collision.GetComponent<PlayerController>())
+        {
+            collision.GetComponent<PlayerController>().getDamage();
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (bossController.isDashing && collision.GetComponent<FakeObstacles>())
+        {
+            collision.GetComponent<FakeObstacles>().getCollide(Vector3.zero);
+        }
+        if (bossController.isDashing && collision.GetComponent<PlayerController>())
+        {
+            collision.GetComponent<PlayerController>().getDamage();
+        }
     }
 }

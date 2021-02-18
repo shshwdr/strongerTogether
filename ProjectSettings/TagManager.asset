@@ -21,8 +21,8 @@ TagManager:
   - PlayerBullet
   - EnemyBullet
   - solidWall
-  - 
-  - 
+  - solidEnemyAttack
+  - fakeCollider
   - 
   - 
   - 

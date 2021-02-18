@@ -17,7 +17,8 @@ public class BossController : HPCharacterController
     int maxStage = 2;
     int stage = 0;
     public bool isDashing;
-    float dashTime = 2f;
+    float dashTime = 1.0f;
+    //float dashLogicalFinishTime = 1.5f;
     float currentDashTimer;
     BoxCollider2D solidCollider;
     public GameObject dashColliderObject;
@@ -85,7 +86,10 @@ public class BossController : HPCharacterController
         solidCollider.enabled = true;
         animator.SetBool("spawn", true);
         EnemyManager.instance.spawnMinions(spawnPositions.transform.GetChild(spawnId).transform.position);
-        yield return new WaitForSeconds(2);
+
+        yield return new WaitForSeconds(0.5f);
+        emotesController.showEmote(EmoteType.confused);
+        yield return new WaitForSeconds(2f);
 
         //yield return new WaitForSeconds(1f);
 
@@ -128,6 +132,14 @@ public class BossController : HPCharacterController
     protected override void Update()
     {
         base.Update();
+
+        //if (isDashing && rb.velocity.magnitude < 0.01f)
+        //{
+        //    isDashing = false;
+        //    dashColliderObject.SetActive(false);
+
+        //    solidCollider.enabled = true;
+        //}
         currentDashTimer += Time.deltaTime;
         if(stage != 1)
         {
@@ -151,17 +163,18 @@ public class BossController : HPCharacterController
         animator.SetBool("spawn", false);
         isDashing = false;
         dashColliderObject.SetActive(false);
+        GetComponent<BoxCollider2D>().enabled = true;
         rb.velocity = Vector3.zero;
         StopAllCoroutines();
 
         EnemyManager.instance.updateEnemies();
         if (stage != maxStage)
         {
+            AudioManager.Instance.playBossDamage(stage);
             //go to next stage
             stage++;
             animator.SetTrigger("die");
 
-            AudioManager.Instance.playBossDamage(stage);
         }
         else
         {
@@ -175,19 +188,29 @@ public class BossController : HPCharacterController
     {
         Debug.Log("dash to player");
         var playerPosition = EnemyManager.instance.player.transform.position;
-        var dir = (playerPosition - transform.position).normalized;
-
+        var dir = (playerPosition - transform.position);
+        dir = new Vector3(dir.x, dir.y, 0);
+        dir = dir.normalized;
         //int layerMask = 1 << 12;
         //layerMask = ~layerMask;
         //RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 12.0f, layerMask);
-        var targetPosition = playerPosition+dir*0.2f;
-        rb.AddForce(dir * 100);
+        //var targetPosition = playerPosition+dir*0.2f;
         //rb.DOMove(targetPosition, dashTime);
-        isDashing = true;
-
+        emotesController.showEmote(EmoteType.angry);
+        //GetComponent<BoxCollider2D>().enabled = false;
         dashColliderObject.SetActive(true);
-        //solidCollider.enabled = false;
+        solidCollider.enabled = false;
         currentDashTimer = 0;
+        Debug.Log("dir " + dir);
+        StartCoroutine(dash(dir));
+    }
+
+    IEnumerator dash(Vector3 dir)
+    {
+        yield return new WaitForSeconds(0.5f);
+        isDashing = true;
+        currentDashTimer = 0;
+        rb.AddForce(dir * 100);
     }
 
     public bool isDashFinished()
