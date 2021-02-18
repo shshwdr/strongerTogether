@@ -221,6 +221,8 @@ public class BossController : HPCharacterController
     public void Heal(int healing = 1)
     {
         hp += healing;
+        //GetComponentInChildren<ParticleSystem>().gameObject.SetActive(true);
+        GetComponentInChildren<ParticleSystem>().Play();
         updateHP();
     }
 
