@@ -46,7 +46,6 @@ MonoBehaviour:
   trail: {fileID: 4636577001566514028, guid: 7e7f4d309659b704b9862f8d22ed647c, type: 3}
   destoryTrailTime: 5
   generateTrailCooldown: 0.25
-  trailGenerateTransform: {fileID: 2118922597}
 --- !u!1001 &4346026518154962260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83,7 +82,7 @@ PrefabInstance:
     - target: {fileID: 3281820176807701796, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
       propertyPath: maxHp
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3281820176807701796, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}

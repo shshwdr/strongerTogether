@@ -23,7 +23,14 @@ public class DoorController : MonoBehaviour
                 openedDoor.SetActive(true);
                 closedDoor.SetActive(false);
                 isOpened = true;
-                AudioManager.Instance.playVicotry();
+                if(GameManager.Instance.currentLevel == 0)
+                {
+
+                }
+                else
+                {
+                    AudioManager.Instance.playVicotry();
+                }
             }
         }
     }

@@ -222,7 +222,6 @@ public class BossController : HPCharacterController
         {
             AudioManager.Instance.playBossDamage(stage);
             //go to next stage
-            stage++;
             animator.SetTrigger("die");
 
         }
@@ -285,9 +284,14 @@ public class BossController : HPCharacterController
     public void Revive()
     {
 
+        stage++;
         maxHp = maxHps[stage];
         isDead = false;
         hp = maxHp;
         updateHP();
+    }
+    public bool isReallyDead()
+    {
+        return isDead && stage == 2;
     }
 }

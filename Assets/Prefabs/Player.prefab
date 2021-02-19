@@ -64,7 +64,7 @@ MonoBehaviour:
   hasInvinsibleTime: 1
   invinsibleTime: 0.5
   moveSpeed: 1
-  meleeAttackCollider: {fileID: 5580125482426150399}
+  meleeAttackCollider: {fileID: 5651503750927383219}
 --- !u!50 &2174674611672211884
 Rigidbody2D:
   serializedVersion: 4

@@ -11,7 +11,7 @@ public class PlayerController: HPCharacterController
     Vector2 movement;
     public float moveSpeed = 5f;
 
-    public GameObject meleeAttackCollider;
+    public PlayerMeleeAttack meleeAttackCollider;
     Vector3 originMeleeAttackPosition;
     bool firstClear = true;
 
@@ -88,7 +88,7 @@ public class PlayerController: HPCharacterController
         //    return;
         //}
 
-        if (EnemyManager.instance.isLevelCleared && firstClear)
+        if (EnemyManager.instance.isLevelCleared && firstClear && GameManager.Instance.currentLevel!=0)
         {
             firstClear = false;
             animator.SetTrigger("victory");
@@ -109,7 +109,7 @@ public class PlayerController: HPCharacterController
         //melee prepare
         if (speed > 0.01f)
         {
-            meleeAttackCollider.SetActive(true);
+            meleeAttackCollider.setactive(true);
             var dir = new Vector3(movement.x, movement.y, 0)*0.08f;
             // The shortcuts way
             //meleeAttackCollider. transform.DOMove(transform.position + dir, 1);
@@ -122,7 +122,7 @@ public class PlayerController: HPCharacterController
         else
         {
 
-            meleeAttackCollider.SetActive(false);
+            meleeAttackCollider.setactive(false);
             meleeAttackCollider.transform.localPosition = Vector3.zero;
             stopAttackAnim();
         }

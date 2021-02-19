@@ -33,6 +33,11 @@ public class EnemyManager : MonoBehaviour
                 }
             }
         }
+        if (bossController && !bossController.isReallyDead())
+        {
+
+            isLevelCleared = false;
+        }
     }
     public void updateEnemies()
     {

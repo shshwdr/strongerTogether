@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8321187208437621932}
   - component: {fileID: 4289908591623576859}
   m_Layer: 8
-  m_Name: enemy
+  m_Name: boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 20
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -161,6 +161,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 10
   isDead: 0
+  isStuned: 0
+  beHitClips: []
+  rb: {fileID: 0}
   stunTime: 0.3
   hasInvinsibleTime: 0
   invinsibleTime: 0

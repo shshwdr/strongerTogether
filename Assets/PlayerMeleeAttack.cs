@@ -6,13 +6,18 @@ public class PlayerMeleeAttack : MonoBehaviour
 {
     public float cooldownTime = 0.2f;
     float currentCooldownTimer;
-
+    Collider2D collider;
     PlayerController playerController;
-    int currentAttackClip = 0;
     // Start is called before the first frame update
     void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
+        collider = GetComponent<Collider2D>();
+    }
+
+    public void setactive(bool isActive)
+    {
+        collider.enabled = isActive;
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
