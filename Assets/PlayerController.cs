@@ -127,6 +127,11 @@ public class PlayerController: HPCharacterController
             stopAttackAnim();
         }
         // transform
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            getDamage(1000);
+        }
     }
     override protected void playHurtSound()
     {

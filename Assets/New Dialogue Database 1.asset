@@ -404,7 +404,7 @@ MonoBehaviour:
     - id: 3
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -428,7 +428,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: (Use AWSD to move and hit monsters)
+        value: (move and attack monsters)
         type: 0
         typeString: 
       - title: Parenthetical
@@ -931,7 +931,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It's.. Valentines day.
+        value: It's.. Valentines day. (arrow key to continue)
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1230,8 +1230,8 @@ MonoBehaviour:
         y: 285.88235
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 58.223938}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 0, y: 91.08185}
+    canvasZoom: 0.7600002
   - id: 4
     fields:
     - title: Title
