@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FinalBossBehavior : StateMachineBehaviour
 {
@@ -17,6 +18,11 @@ public class FinalBossBehavior : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        animator.GetComponentInParent<NavMeshAgent>().SetDestination(EnemyManager.instance.player.transform.position);
+        if (bossController.shouldSwitchAbility())
+        {
+            bossController.spawnPublic3();
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

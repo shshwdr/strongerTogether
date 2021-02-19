@@ -24,6 +24,11 @@ public class BossController : HPCharacterController
     public GameObject dashColliderObject;
     // Start is called before the first frame update
 
+    public GameObject[] abilities;
+    float abilitySwitchTime = 3f;
+    float currentAiblitySwitchTimer = 0;
+    int currentAbilityId = 0;
+
     public void spawnPublic()
     {
         StartCoroutine(spawn());
@@ -31,14 +36,35 @@ public class BossController : HPCharacterController
 
     public void ChasePlayer()
     {
+        agent.enabled = true;
         agent.isStopped = false;
         agent.SetDestination(EnemyManager.instance.player.transform.position);
+        solidCollider.offset = new Vector2(0f, -0.1f);
+        solidCollider.size = new Vector2(0.2f, -0.25f);
+        switchAbility();
+    }
+
+    void switchAbility()
+    {
+        abilities[currentAbilityId].SetActive(false);
+        currentAbilityId++;
+        if (currentAbilityId >= abilities.Length)
+        {
+            currentAbilityId = 0;
+        }
+        abilities[currentAbilityId].SetActive(true);
     }
 
     public void spawnPublic2()
     {
         Debug.Log("spawn public 2");
         StartCoroutine(spawn2());
+    }
+
+    public void spawnPublic3()
+    {
+        Debug.Log("spawn public 3");
+        StartCoroutine(spawn3());
     }
 
     public void selectNextSpawnId()
@@ -103,6 +129,29 @@ public class BossController : HPCharacterController
         isSpawning = false;
         //dashToPlayer();
     }
+
+    IEnumerator spawn3()
+    {
+        Debug.Log("start spawn 3");
+        currentAiblitySwitchTimer = 0; 
+        selectNextSpawnId();
+        EnemyManager.instance.spawnMinions(spawnPositions.transform.GetChild(spawnId).transform.position);
+        switchAbility();
+        //yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
+
+        //yield return new WaitForSeconds(1f);
+
+        //Debug.Log("finish spawn 2");
+        //animator.SetBool("spawn", false);
+        //Debug.Log("select next");
+       // selectNextSpawnId();
+        //Debug.Log("spawn finished");
+
+        //Debug.Log("remaining after finishe " + agent.remainingDistance);
+        //isSpawning = false;
+        //dashToPlayer();
+    }
     protected override void Start()
     {
         maxHp = maxHps[stage];
@@ -141,7 +190,8 @@ public class BossController : HPCharacterController
         //    solidCollider.enabled = true;
         //}
         currentDashTimer += Time.deltaTime;
-        if(stage != 1)
+        currentAiblitySwitchTimer += Time.deltaTime;
+        if (stage != 1)
         {
 
             testFlip(agent.velocity);
@@ -216,6 +266,12 @@ public class BossController : HPCharacterController
     public bool isDashFinished()
     {
         return currentDashTimer >= dashTime;
+    }
+
+
+    public bool shouldSwitchAbility()
+    {
+        return currentAiblitySwitchTimer >= abilitySwitchTime;
     }
 
     public void Heal(int healing = 1)

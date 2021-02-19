@@ -9,11 +9,11 @@ public class EnemyRangeAttack : MonoBehaviour
     public float cooldownTime = 2f;
     public float bulletSpeed = 10f;
     float currentCooldownTimer;
-    EnemyController enemyController;
+    HPCharacterController enemyController;
     // Start is called before the first frame update
     void Start()
     {
-        enemyController = GetComponent<EnemyController>();
+        enemyController = GetComponentInParent<HPCharacterController>();
 
     }
 
