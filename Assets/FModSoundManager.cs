@@ -6,14 +6,20 @@ public class FModSoundManager : Singleton<FModSoundManager>
 {
     FMOD.Studio.EventInstance ambience;
     float currentAmbienceIntensity;
+    [FMODUnity.EventRef]
+    public string eventName;
     // Start is called before the first frame update
     void Start()
     {
-        ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Level 2");
+        ambience = FMODUnity.RuntimeManager.CreateInstance(eventName);
         ambience.setVolume(0.1f);
         ambience.start();
     }
+    public void SetParam(string paramName, float value)
+    {
 
+        ambience.setParameterByName(paramName, value);
+    }
     public void SetAmbienceParamter(float param)
     {
         if (currentAmbienceIntensity != param)

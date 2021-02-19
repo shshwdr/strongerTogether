@@ -181,6 +181,7 @@ public class PlayerController: HPCharacterController
         isDead = true;
         animator.SetTrigger("die");
 
-        AudioManager.Instance.playGameOver();
+        //AudioManager.Instance.playGameOver();
+        FModSoundManager.Instance.SetParam("Game Over", 1);
     }
 }

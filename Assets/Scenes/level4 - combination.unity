@@ -521,6 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9bee76a02e8c4547b0d3cc56e02ba70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventName: event:/Dungeon 2
 --- !u!1001 &669252827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5358,6 +5359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174674611672211885, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
+        type: 3}
+      propertyPath: maxHp
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87fc9dfd1b99a9044af44c207ff7a71b, type: 3}
