@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -570,6 +571,26 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 100
+  m_RefResolutionX: 200
+  m_RefResolutionY: 180
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1001 &544785340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1673,6 +1694,7 @@ GameObject:
   - component: {fileID: 1063841552}
   - component: {fileID: 1063841551}
   - component: {fileID: 1063841553}
+  - component: {fileID: 1063841554}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -1747,6 +1769,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 342283556}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &1063841554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063841550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1065637397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3281820176807701799, guid: 88a4c3bc8c652b042b81cf622dca24b0,

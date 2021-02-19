@@ -19,6 +19,7 @@ public class EnemyController : HPCharacterController
     float originSpeed;
     SpriteRenderer m_Renderer;
     protected EnemyController mergingOther;
+    public Animator deathAnimator;
 
     float offMergeDistance = 0;
 
@@ -58,6 +59,11 @@ public class EnemyController : HPCharacterController
     // Update is called once per frame
     protected override void Update()
     {
+        if (isDead || EnemyManager.instance.player.isDead)
+        {
+            agent.isStopped = true;
+            return;
+        }
         base.Update();
         if (isStuned)
         {
@@ -145,6 +151,10 @@ public class EnemyController : HPCharacterController
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isDead)
+        {
+            return;
+        }
         if(collision.GetComponent<EnemyController>()&& canBePairedWith(collision.GetComponent<EnemyController>()))
         {
             StartCoroutine( Merge(collision.GetComponent<EnemyController>()));
@@ -153,6 +163,10 @@ public class EnemyController : HPCharacterController
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (isDead)
+        {
+            return;
+        }
         //if(isMerging &&  collision.GetComponent<EnemyController>() == mergingOther)
         //{
         //    StopMerging();
@@ -188,6 +202,10 @@ public class EnemyController : HPCharacterController
         emotesController.showEmote(EmoteType.heart,true);
         other.emotesController.showEmote(EmoteType.heart,true);
         yield return new WaitForSeconds(2);
+        if (isDead)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
         if (isMerging)
         {
 
@@ -217,6 +235,9 @@ public class EnemyController : HPCharacterController
         }
         base.Die();
         EnemyManager.instance.updateEnemies();
+        animator.SetTrigger("die");
+        //deathAnimator.enabled = true;
+        Destroy(gameObject, 0.3f);
     }
 
 }

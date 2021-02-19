@@ -11,6 +11,13 @@ public class FModSoundManager : Singleton<FModSoundManager>
     // Start is called before the first frame update
     void Start()
     {
+        //ambience = FMODUnity.RuntimeManager.CreateInstance(eventName);
+        //ambience.setVolume(0.1f);
+        //ambience.start();
+        Invoke("delayTest", 0);
+    }
+    void delayTest()
+    {
         ambience = FMODUnity.RuntimeManager.CreateInstance(eventName);
         ambience.setVolume(0.1f);
         ambience.start();

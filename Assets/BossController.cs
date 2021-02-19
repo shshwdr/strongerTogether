@@ -40,7 +40,9 @@ public class BossController : HPCharacterController
         agent.isStopped = false;
         agent.SetDestination(EnemyManager.instance.player.transform.position);
         solidCollider.offset = new Vector2(0f, -0.1f);
-        solidCollider.size = new Vector2(0.2f, -0.25f);
+        solidCollider.size = new Vector2(0.2f, 0.25f);
+
+        solidCollider.enabled = true;
         switchAbility();
     }
 
@@ -180,6 +182,12 @@ public class BossController : HPCharacterController
     // Update is called once per framee
     protected override void Update()
     {
+        if (isDead || EnemyManager.instance.player.isDead)
+        {
+            //agent.isStopped = true;
+            rb.velocity = Vector3.zero;
+            return;
+        }
         base.Update();
 
         //if (isDashing && rb.velocity.magnitude < 0.01f)

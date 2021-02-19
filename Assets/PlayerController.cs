@@ -74,6 +74,7 @@ public class PlayerController: HPCharacterController
     {
         if (isDead)
         {
+            stopAttackAnim();
             return;
         }
         //if (GameManager.instance.isCheatOn && Input.GetKeyDown(KeyCode.M))

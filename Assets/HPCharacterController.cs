@@ -92,7 +92,6 @@ public class HPCharacterController : MonoBehaviour
     protected virtual void Die()
     {
         isDead = true;
-        Destroy(gameObject);
     }
 
 

@@ -7,6 +7,7 @@ public class GameManager : Singleton<GameManager>
 {
     public bool isCheatOn = true;
     public int currentLevel;
+    public bool isGamePaused;
     // Start is called before the first frame update
     void Start()
     {
