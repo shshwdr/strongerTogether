@@ -13,9 +13,11 @@ public class DialogueEventHelper : Singleton<DialogueEventHelper>
     public void startDialogue()
     {
         dialogueFinished = false;
+        Time.timeScale = 0;
     }
     public void finishDialogue()
     {
+        Time.timeScale = 1;
         dialogueFinished = true;
         EnemyManager.instance.updateLevel();
     }

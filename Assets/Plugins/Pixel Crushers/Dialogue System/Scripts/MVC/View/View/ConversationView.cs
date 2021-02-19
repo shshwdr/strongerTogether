@@ -114,7 +114,7 @@ namespace PixelCrushers.DialogueSystem
 
         private bool IsConversationCancelKeyDown()
         {
-            return settings.GetCancelConversationInput().isDown;
+            return false;
         }
 
         /// <summary>
