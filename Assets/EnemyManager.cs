@@ -53,7 +53,8 @@ public class EnemyManager : MonoBehaviour
                 }
             }
         }
-        highestLevel += 1.5f;
+        highestLevel += 1f;
+        Debug.Log("highest level "+ highestLevel);
         FModSoundManager.Instance.SetAmbienceParamter(highestLevel);
         updateLevel();
     }

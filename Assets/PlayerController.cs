@@ -206,5 +206,10 @@ public class PlayerController: HPCharacterController
 
         //AudioManager.Instance.playGameOver();
         FModSoundManager.Instance.SetParam("Game Over", 1);
+        Invoke("gameover", 1);
+    }
+    void gameover()
+    {
+        GameOver.Instance .Gameover();
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class FModSoundManager : Singleton<FModSoundManager>
 {
@@ -10,9 +11,10 @@ public class FModSoundManager : Singleton<FModSoundManager>
     string currentEvent;
     FMOD.Studio.EventInstance[] ambiences = new FMOD.Studio.EventInstance[2];
     int currentId = 0;
-
+    float volumnValue = 0.2f;
     public bool isMerged = false;
     public bool getHelpDialogue = false;
+    float defaultVolumn = 0.2f;
     //[FMODUnity.EventRef]
     //public string eventName;
     // Start is called before the first frame update
@@ -27,10 +29,23 @@ public class FModSoundManager : Singleton<FModSoundManager>
     {
         return ambiences[currentId];
     }
+
+    public void resetVolumn()
+    {
+        SetVolumn(defaultVolumn);
+    }
     public void startEvent(string eventName)
     {
+        
+        if(eventName == "")
+        {
+
+            currentEvent = eventName;
+            return;
+        }
         if (eventName != currentEvent)
         {
+            Debug.Log("start even " + eventName);
            // if (currentAmbience() == null)
             {
 
@@ -47,7 +62,7 @@ public class FModSoundManager : Singleton<FModSoundManager>
             // ambience.setVolume(0.1f);
             currentAmbience().start();
 
-            currentAmbience().setVolume(0.2f);
+            currentAmbience().setVolume(defaultVolumn);
             currentEvent = eventName;
         }
     }
@@ -56,9 +71,17 @@ public class FModSoundManager : Singleton<FModSoundManager>
 
         currentAmbience().setParameterByName(paramName, value);
     }
+    public void SetVolumn(float value)
+    {
+
+        //transform.DOMove(new Vector3(2, 2, 2), 1);
+﻿﻿﻿﻿﻿﻿﻿﻿// The generic way
+//﻿﻿﻿﻿﻿﻿﻿﻿DOTween.To(() => transform.position, x => transform.position = x, new Vector3(2, 2, 2), 1);
+        currentAmbience().setVolume(value);
+    }
     public void SetAmbienceParamter(float param)
     {
-        if (currentAmbienceIntensity != param)
+        //if (currentAmbienceIntensity != param)
         {
             print("set ambience to " + param);
             currentAmbienceIntensity = param;

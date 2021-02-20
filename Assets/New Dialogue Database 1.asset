@@ -5248,7 +5248,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: 
+        value: d8f320be-ad40-4665-b1df-f7ef7cd44a59
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -5659,7 +5659,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: 
+        value: de85d54a-c726-42f0-a31f-ada8e9c66bb8
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -5936,8 +5936,8 @@ MonoBehaviour:
         y: 819.93616
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 292.12918}
-    canvasZoom: 0.5800004
+    canvasScrollPosition: {x: 0, y: 255.14426}
+    canvasZoom: 0.37000045
   - id: 10
     fields:
     - title: Title
@@ -8924,10 +8924,10 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 162.75853
-        y: 504.7782
+        y: 503.05408
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 189.65503}
     canvasZoom: 0.5800004
   - id: 14
     fields:
@@ -9738,7 +9738,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: 
+        value: 6f290cc3-e50a-439d-9e70-d653d5fe4b1d
         type: 0
         typeString: 
       - title: Response Menu Sequence

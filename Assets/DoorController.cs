@@ -29,9 +29,12 @@ public class DoorController : MonoBehaviour
                 }
                 else
                 {
+                    FModSoundManager.Instance.SetVolumn(0);
+                    AudioManager.Instance.playVicotry();
+                    Invoke("restartSound", 0.8f);
                     //AudioManager.Instance.playVicotry();
-                    FModSoundManager.Instance.SetParam("Victory", 1);
-                    Invoke("resetSound", 0.8f);
+                    //FModSoundManager.Instance.SetParam("Victory", 1);
+                    //Invoke("resetSound", 0.8f);
                 }
             }
         }
@@ -39,8 +42,14 @@ public class DoorController : MonoBehaviour
 
     void resetSound()
     {
-
-        FModSoundManager.Instance.SetParam("Victory", 0);
+        FModSoundManager.Instance.SetVolumn(0);
+        AudioManager.Instance.playVicotry();
+        Invoke("restartSound",0.8f);
+        //FModSoundManager.Instance.SetParam("Victory", 0);
+    }
+    void restartSound()
+    {
+        FModSoundManager.Instance.resetVolumn();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

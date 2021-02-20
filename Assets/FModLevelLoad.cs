@@ -10,6 +10,8 @@ public class FModLevelLoad : MonoBehaviour
     void Start()
     {
         FModSoundManager.Instance.startEvent(eventName);
+
+        EnemyManager.instance.updateEnemies();
     }
 
     // Update is called once per frame

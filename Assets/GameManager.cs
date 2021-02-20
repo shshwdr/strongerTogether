@@ -49,9 +49,14 @@ public class GameManager : Singleton<GameManager>
         }
         if ((!EnemyManager.instance.player || EnemyManager.instance.player.isDead) && Input.GetKeyDown(KeyCode.R))
         {
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-
+            RestartLevel();
         }
+    }
+
+    public void RestartLevel()
+    {
+
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }
