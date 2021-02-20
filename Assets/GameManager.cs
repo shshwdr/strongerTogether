@@ -55,7 +55,8 @@ public class GameManager : Singleton<GameManager>
 
     public void RestartLevel()
     {
-
+        Time.timeScale = 1;
+        isGameOver = false;
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }

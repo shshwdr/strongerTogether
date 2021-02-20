@@ -234,7 +234,7 @@ public class BossController : HPCharacterController
             //go to next stage
             animator.SetTrigger("die");
 
-            DialogueManager.StartConversation(conversation, null, null);
+            //DialogueManager.StartConversation(conversation, null, null);
         }
         else
         {

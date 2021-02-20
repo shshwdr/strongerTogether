@@ -93,12 +93,12 @@ public class FModSoundManager : Singleton<FModSoundManager>
     // Update is called once per frame
     void Update()
     {
-        //if (FMODUnity.RuntimeManager.HasBankLoaded("Master")&&!loaded)
-        //{
-        //    loaded = true;
-        //    Debug.Log("Master Bank Loaded");
-        //    SceneManager.LoadScene(1);
-        //}
+        if (FMODUnity.RuntimeManager.HasBankLoaded("Master") && !loaded)
+        {
+            loaded = true;
+            Debug.Log("Master Bank Loaded");
+            SceneManager.LoadScene(1);
+        }
     }
     private void OnDestroy()
     {
