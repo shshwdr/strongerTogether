@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using PixelCrushers.DialogueSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -39,6 +40,12 @@ public class EnemyController : HPCharacterController
         originSpeed = agent.speed;
         m_Renderer = spriteObject. GetComponent<SpriteRenderer>();
         offMergeDistance = GetComponent<CircleCollider2D>().radius * 2f;
+
+        if (FModSoundManager.Instance.isMerged && !FModSoundManager.Instance.getHelpDialogue && mergeLevel == 2)
+        {
+            FModSoundManager.Instance.getHelpDialogue = true;
+            DialogueManager.StartConversation("getHelp", null, null);
+        }
     }
 
     bool isBoss()
@@ -59,6 +66,11 @@ public class EnemyController : HPCharacterController
     // Update is called once per frame
     protected override void Update()
     {
+        if(GameManager.Instance.currentLevel == 7)
+        {
+            //agent.isStopped = true;
+            return;
+        }
         if (isDead || EnemyManager.instance.player.isDead)
         {
             agent.isStopped = true;
@@ -86,8 +98,15 @@ public class EnemyController : HPCharacterController
         else
         {
             //find the cloest target, either player or enemy with same type and merge level
-            float shortestDistance = getDistanceToTarget(EnemyManager.instance.player.transform);
-            Transform shortestTarget = EnemyManager.instance.player.transform;
+            float shortestDistance = 10000f;
+            Transform shortestTarget = transform;
+            bool foundTarget = false;
+            if (!FModSoundManager.Instance.isMerged)
+            {
+                getDistanceToTarget(EnemyManager.instance.player.transform);
+                shortestTarget = EnemyManager.instance.player.transform;
+                foundTarget = true;
+            }
             if (m_Renderer.isVisible)
             {
                 agent.speed = originSpeed;
@@ -122,12 +141,20 @@ public class EnemyController : HPCharacterController
                 {
                     shortestTarget = enemy.transform;
                     shortestDistance = distance;
+                    foundTarget = true;
                 }
             }
+            if (foundTarget)
+            {
 
-            agent.isStopped = false;
-            agent.SetDestination(shortestTarget.position);
-            testFlip(agent.velocity);
+                agent.isStopped = false;
+                agent.SetDestination(shortestTarget.position);
+                testFlip(agent.velocity);
+            }
+            else
+            {
+                agent.isStopped = true;
+            }
         }
         animator.SetFloat("speed", agent.velocity.magnitude);
     }

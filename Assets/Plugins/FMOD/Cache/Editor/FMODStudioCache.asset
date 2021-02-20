@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8625386044900181300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dungeon 1/Game Over
+  m_EditorClassIdentifier: 
+  Name: Game Over
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-8594483811126343384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +80,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8198096835745265785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,16 +120,16 @@ MonoBehaviour:
   Path: event:/Boss Battle
   guid: 4c758abc469e2146944a5e1cbc47db35
   Banks:
-  - {fileID: 800555109790234782}
+  - {fileID: -6072350937831855611}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 9074999908673145059}
-  - {fileID: -3467651159334279312}
+  - {fileID: 5630756689049633572}
+  - {fileID: 4847085918123357305}
   MinDistance: 0
   MaxDistance: 0
-  Length: 49209
+  Length: 50000
 --- !u!114 &-7756635897054732597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +192,45 @@ MonoBehaviour:
   lastModified: 637486877446095191
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-6072350937831855611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/music/FMOD 3.0/FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637493610710921001
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5749571105653597662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dungeon 2/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-5590162933147181656
 MonoBehaviour:
@@ -236,6 +295,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 14883
+--- !u!114 &-4979251143772770216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dungeon 2/Game Over
+  m_EditorClassIdentifier: 
+  Name: Game Over
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-4814297304442358452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +334,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4346852196896408201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +394,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3278951681472200272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +410,46 @@ MonoBehaviour:
   Name: Intensity
   Min: 0
   Max: 4
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-3078164692883246609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Town - Forest/Game Over
+  m_EditorClassIdentifier: 
+  Name: Game Over
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-2274060357400705695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dungeon 1/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 3
   Default: 0
   ID:
     data1: 0
@@ -360,6 +479,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 13714
+--- !u!114 &-2129690923614151778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Town - Forest/Victory
+  m_EditorClassIdentifier: 
+  Name: Victory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1547965775716851497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +541,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 798
   Exists: 1
+--- !u!114 &-1431824282944747146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Town - Forest/Town-Forest
+  m_EditorClassIdentifier: 
+  Name: Town-Forest
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-281224731699282381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,17 +576,17 @@ MonoBehaviour:
   Path: event:/Town - Forest
   guid: 4b7555f18edc024d85cbcdbad1947a6e
   Banks:
-  - {fileID: 800555109790234782}
+  - {fileID: -6072350937831855611}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -236494953209352850}
-  - {fileID: 2738436711018156458}
-  - {fileID: 6236112448456404871}
+  - {fileID: -3078164692883246609}
+  - {fileID: -2129690923614151778}
+  - {fileID: -1431824282944747146}
   MinDistance: 0
   MaxDistance: 0
-  Length: 69241
+  Length: 70640
 --- !u!114 &-243277677147742617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +626,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-139352709340907920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,8 +660,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 3021617284984610073}
-  - {fileID: 800555109790234782}
+  - {fileID: 835048892329790872}
+  - {fileID: -6072350937831855611}
   EditorEvents:
   - {fileID: -281224731699282381}
   - {fileID: -7984293383274535835}
@@ -510,10 +669,10 @@ MonoBehaviour:
   - {fileID: 1288925363876112510}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 800555109790234782}
+  - {fileID: -6072350937831855611}
   StringsBanks:
-  - {fileID: 3021617284984610073}
-  stringsBankWriteTime: 637493486924474111
+  - {fileID: 835048892329790872}
+  stringsBankWriteTime: 637493610711011021
   cacheVersion: 6
 --- !u!114 &300158454274974096
 MonoBehaviour:
@@ -578,6 +737,27 @@ MonoBehaviour:
   lastModified: 637493486924394096
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &835048892329790872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/music/FMOD 3.0/FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637493610711011021
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1072
   Exists: 1
 --- !u!114 &1184728784686474447
 MonoBehaviour:
@@ -613,17 +793,17 @@ MonoBehaviour:
   Path: event:/Dungeon 2
   guid: d77af0c7ed81284b96d7d613eea8baf4
   Banks:
-  - {fileID: 800555109790234782}
+  - {fileID: -6072350937831855611}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 3789730817907197647}
-  - {fileID: 2435363160399144930}
-  - {fileID: 3667830309195912334}
+  - {fileID: -5749571105653597662}
+  - {fileID: 2469915886950527450}
+  - {fileID: -4979251143772770216}
   MinDistance: 0
   MaxDistance: 0
-  Length: 65209
+  Length: 66000
 --- !u!114 &2029944857255643938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,7 +823,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2159803345529538298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,17 +839,17 @@ MonoBehaviour:
   Path: event:/Dungeon 1
   guid: 953e448ccbe5d7428206e7cb8fb765a9
   Banks:
-  - {fileID: 800555109790234782}
+  - {fileID: -6072350937831855611}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 2029944857255643938}
-  - {fileID: -8439214726449838246}
-  - {fileID: -4814297304442358452}
+  - {fileID: 9156387400504521150}
+  - {fileID: -8625386044900181300}
+  - {fileID: -2274060357400705695}
   MinDistance: 0
   MaxDistance: 0
-  Length: 66074
+  Length: 67297
 --- !u!114 &2240146045816441057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,6 +889,26 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
+  Exists: 0
+--- !u!114 &2469915886950527450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dungeon 2/Victory
+  m_EditorClassIdentifier: 
+  Name: Victory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &2738436711018156458
 MonoBehaviour:
@@ -729,7 +929,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3021617284984610073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,7 +950,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1072
-  Exists: 1
+  Exists: 0
 --- !u!114 &3307095288312914873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,7 +990,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3789730817907197647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,7 +1010,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4446950301169988129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,6 +1026,26 @@ MonoBehaviour:
   Name: Intensity
   Min: 0
   Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &4847085918123357305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Boss Battle/Victory
+  m_EditorClassIdentifier: 
+  Name: Victory
+  Min: 0
+  Max: 1
   Default: 0
   ID:
     data1: 0
@@ -870,6 +1090,26 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &5630756689049633572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Boss Battle/Game Over
+  m_EditorClassIdentifier: 
+  Name: Game Over
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6236112448456404871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +1129,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &7030476059182028000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,7 +1267,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &9098512649073153269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,3 +1289,23 @@ MonoBehaviour:
   - Name: Desktop
     Value: 796
   Exists: 0
+--- !u!114 &9156387400504521150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Dungeon 1/Victory
+  m_EditorClassIdentifier: 
+  Name: Victory
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1

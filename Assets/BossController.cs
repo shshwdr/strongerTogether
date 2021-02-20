@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using DG.Tweening;
+using PixelCrushers.DialogueSystem;
 
 public class BossController : HPCharacterController
 {
     NavMeshAgent agent;
 
+    [ConversationPopup] public string conversation;
     GameObject bossTargets;
     GameObject spawnPositions;
     int spawnId = -1;
@@ -232,11 +234,13 @@ public class BossController : HPCharacterController
             //go to next stage
             animator.SetTrigger("die");
 
+            DialogueManager.StartConversation(conversation, null, null);
         }
         else
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
             AudioManager.Instance.playBossDefeat();
+            DialogueManager.StartConversation(conversation, null, null);
         }
     }
     

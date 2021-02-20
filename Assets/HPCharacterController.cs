@@ -72,6 +72,10 @@ public class HPCharacterController : MonoBehaviour
         {
             return;
         }
+        if (FModSoundManager.Instance.isMerged)
+        {
+            return;
+        }
         currentInvinsibleTimer = 0;
         hp -= damage;
         playHurtSound();

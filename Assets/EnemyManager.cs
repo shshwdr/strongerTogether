@@ -15,6 +15,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject[] minionsToSpawn;
     public BossController bossController;
 
+
     public void spawnMinions(Vector3 position)
     {
         var minionToSpawn = minionsToSpawn[Random.Range(0, 3)];
@@ -92,6 +93,7 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.K))
         {
             foreach (var enemyList in enemiesDictionary.Values)

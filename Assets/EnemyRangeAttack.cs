@@ -35,6 +35,10 @@ public class EnemyRangeAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (FModSoundManager.Instance.isMerged)
+        {
+            return;
+        }
         if (!enemyController.isStuned){
             currentCooldownTimer += Time.deltaTime;
             if (currentCooldownTimer > cooldownTime)

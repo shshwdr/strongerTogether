@@ -21,7 +21,10 @@ public class PlayerMeleeAttack : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-
+        if (FModSoundManager.Instance.isMerged)
+        {
+            return;
+        }
         if (collision.collider.GetComponent<EnemyController>() )
         {
             if (currentCooldownTimer < cooldownTime)

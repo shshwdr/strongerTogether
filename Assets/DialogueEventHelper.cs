@@ -10,6 +10,18 @@ public class DialogueEventHelper : Singleton<DialogueEventHelper>
     {
         
     }
+
+    public void killMonster()
+    {
+        Destroy( EnemyManager.instance.bossController.gameObject);
+    }
+
+    public void mergeMonster()
+    {
+        Destroy(EnemyManager.instance.bossController.gameObject);
+        FModSoundManager.Instance.isMerged = true;
+    }
+
     public void startDialogue()
     {
         dialogueFinished = false;

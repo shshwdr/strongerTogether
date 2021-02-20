@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class PlayerController: HPCharacterController
     public PlayerMeleeAttack meleeAttackCollider;
     Vector3 originMeleeAttackPosition;
     bool firstClear = true;
+    bool spawned = false;
 
    // private void Awake()
    //{
@@ -89,7 +91,7 @@ public class PlayerController: HPCharacterController
         //    return;
         //}
 
-        if (EnemyManager.instance.isLevelCleared && firstClear && GameManager.Instance.currentLevel!=0)
+        if (EnemyManager.instance.isLevelCleared && firstClear && GameManager.Instance.currentLevel != 0 && GameManager.Instance.currentLevel != 7)
         {
             firstClear = false;
             animator.SetTrigger("victory");
@@ -133,6 +135,20 @@ public class PlayerController: HPCharacterController
         if (Input.GetKeyDown(KeyCode.L))
         {
             getDamage(1000);
+        }
+
+        if (FModSoundManager.Instance.isMerged && Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.currentLevel == 6)
+        {
+            var dir = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0);
+            EnemyManager.instance.spawnMinions(transform.position+ dir);
+            if (!spawned)
+            {
+                spawned = true;
+
+                DialogueManager.StartConversation("firstMerge", null, null);
+
+            }
+
         }
     }
     override protected void playHurtSound()

@@ -6,7 +6,7 @@ public class DoorController : MonoBehaviour
 {
     public GameObject openedDoor;
     public GameObject closedDoor;
-    bool isOpened = false;
+    public bool isOpened = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +31,16 @@ public class DoorController : MonoBehaviour
                 {
                     //AudioManager.Instance.playVicotry();
                     FModSoundManager.Instance.SetParam("Victory", 1);
+                    Invoke("resetSound", 0.8f);
                 }
             }
         }
+    }
+
+    void resetSound()
+    {
+
+        FModSoundManager.Instance.SetParam("Victory", 0);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -7,7 +7,8 @@ public class GameManager : Singleton<GameManager>
 {
     public bool isCheatOn = true;
     public int currentLevel;
-    public bool isGamePaused;
+    public bool isGameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class GameManager : Singleton<GameManager>
         currentLevel = level;
         //hideRestartButton();
         Time.timeScale = 1;
-
+        isGameOver = false;
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(level+1);
     }
@@ -33,6 +34,10 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        if (isGameOver)
+        {
+            Time.timeScale = 0;
+        }
         for (int i = 0; i < 9; i++)
         {
             if (isCheatOn && Input.GetKeyDown(KeyCode.Alpha1 + i))
