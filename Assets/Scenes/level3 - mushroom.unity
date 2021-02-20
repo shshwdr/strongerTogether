@@ -375,9 +375,9 @@ GameObject:
   - component: {fileID: 591864874}
   - component: {fileID: 591864875}
   - component: {fileID: 591864876}
-  - component: {fileID: 591864879}
   - component: {fileID: 591864877}
   - component: {fileID: 591864878}
+  - component: {fileID: 591864880}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -413,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCheatOn: 1
   currentLevel: 3
+  isGamePaused: 0
 --- !u!114 &591864876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,7 +510,7 @@ MonoBehaviour:
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
   selectedDatabase: {fileID: 11400000, guid: 2f48d6f099121aa4e94e6ef0648eb6cd, type: 2}
---- !u!114 &591864879
+--- !u!114 &591864880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -518,7 +519,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 591864873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9bee76a02e8c4547b0d3cc56e02ba70, type: 3}
+  m_Script: {fileID: 11500000, guid: 598a0d22421405a4493b2e1e88ad6f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: event:/Dungeon 1

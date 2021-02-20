@@ -26,7 +26,7 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1;
 
         Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(level+1);
     }
 
 

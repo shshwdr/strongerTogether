@@ -29,7 +29,8 @@ public class DoorController : MonoBehaviour
                 }
                 else
                 {
-                    AudioManager.Instance.playVicotry();
+                    //AudioManager.Instance.playVicotry();
+                    FModSoundManager.Instance.SetParam("Victory", 1);
                 }
             }
         }

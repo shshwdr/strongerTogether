@@ -6656,6 +6656,7 @@ GameObject:
   - component: {fileID: 1437301191}
   - component: {fileID: 1437301194}
   - component: {fileID: 1437301195}
+  - component: {fileID: 1437301196}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6782,6 +6783,20 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &1437301196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437301190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &1439719039
 GameObject:
   m_ObjectHideFlags: 0
@@ -45653,9 +45668,9 @@ GameObject:
   - component: {fileID: 1801452031}
   - component: {fileID: 1801452030}
   - component: {fileID: 1801452029}
-  - component: {fileID: 1801452028}
   - component: {fileID: 1801452027}
   - component: {fileID: 1801452026}
+  - component: {fileID: 1801452032}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45742,19 +45757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671e699fc27da3948a811ffb7803ff98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1801452028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801452025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9bee76a02e8c4547b0d3cc56e02ba70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventName: event:/Town - Forest
 --- !u!114 &1801452029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45786,6 +45788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCheatOn: 1
   currentLevel: 0
+  isGamePaused: 0
 --- !u!4 &1801452031
 Transform:
   m_ObjectHideFlags: 0
@@ -45800,6 +45803,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1801452032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801452025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598a0d22421405a4493b2e1e88ad6f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: event:/Town - Forest
 --- !u!1001 &1823637902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45887,6 +45903,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1044109236, guid: 87fc9dfd1b99a9044af44c207ff7a71b, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2174674611672211872, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
         type: 3}
       propertyPath: m_RootOrder

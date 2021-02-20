@@ -189,6 +189,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 145789af2ada42646a1092be8f7bf539, type: 3}
   - {fileID: 8300000, guid: 1ecdc9081157c0349b4be8799affc627, type: 3}
   - {fileID: 8300000, guid: 3cd510241af4550488820b8e2d2c1190, type: 3}
+  monsterDie:
+  - {fileID: 8300000, guid: 171171572e9939a43a7ff46978bc0f5d, type: 3}
+  - {fileID: 8300000, guid: 07d07ec50c26b9648b75b79cde0e379b, type: 3}
+  - {fileID: 8300000, guid: fcbd56214a64d264a82c7f8311e7e2c9, type: 3}
 --- !u!82 &1044109236
 AudioSource:
   m_ObjectHideFlags: 0

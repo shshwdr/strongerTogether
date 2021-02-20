@@ -300,9 +300,9 @@ GameObject:
   - component: {fileID: 591864874}
   - component: {fileID: 591864875}
   - component: {fileID: 591864876}
-  - component: {fileID: 591864879}
   - component: {fileID: 591864877}
   - component: {fileID: 591864878}
+  - component: {fileID: 591864879}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -338,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCheatOn: 1
   currentLevel: 2
+  isGamePaused: 0
 --- !u!114 &591864876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,10 +444,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 591864873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9bee76a02e8c4547b0d3cc56e02ba70, type: 3}
+  m_Script: {fileID: 11500000, guid: 598a0d22421405a4493b2e1e88ad6f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: event:/Dungeon 2
+  eventName: event:/Dungeon 1
 --- !u!1 &677329461
 GameObject:
   m_ObjectHideFlags: 0

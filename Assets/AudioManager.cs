@@ -13,6 +13,7 @@ public class AudioManager : Singleton<AudioManager>
     public AudioClip merge;
 
     public AudioClip[] playerHurt;
+    public AudioClip[] monsterDie;
     Dictionary<AudioClip, int> clipToId;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,10 @@ public class AudioManager : Singleton<AudioManager>
     public void playVicotry()
     {
         playAudio(victory);
+    }
+    public void playMonsterDie(int mergeLevel)
+    {
+        playAudio(monsterDie[mergeLevel]);
     }
     public void playGameOver()
     {

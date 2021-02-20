@@ -93,6 +93,7 @@ public class PlayerController: HPCharacterController
         {
             firstClear = false;
             animator.SetTrigger("victory");
+
         }
 
         movement.x = Input.GetAxisRaw("Horizontal");
