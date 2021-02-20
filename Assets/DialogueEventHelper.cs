@@ -24,14 +24,14 @@ public class DialogueEventHelper : Singleton<DialogueEventHelper>
 
     public void startDialogue()
     {
-        //dialogueFinished = false;
-        //Time.timeScale = 0;
+        dialogueFinished = false;
+        Time.timeScale = 0;
     }
     public void finishDialogue()
     {
-       // Time.timeScale = 1;
-        //dialogueFinished = true;
-        //EnemyManager.instance.updateLevel();
+        Time.timeScale = 1;
+        dialogueFinished = true;
+        EnemyManager.instance.updateLevel();
     }
     // Update is called once per frame
     void Update()
