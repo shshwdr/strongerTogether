@@ -413,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCheatOn: 1
   currentLevel: 4
-  isGamePaused: 0
+  isGameOver: 0
 --- !u!114 &591864876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: 
+  conversation: combination
   conversationConversant: {fileID: 0}
   conversationActor: {fileID: 0}
   startConversationEntryID: -1
