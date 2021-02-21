@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trail: {fileID: 4636577001566514028, guid: 9b08da912edec784c9adb5b4b7e4e009, type: 3}
   destoryTrailTime: 4
-  generateTrailCooldown: 0.4
+  generateTrailCooldown: 0.8
 --- !u!1001 &4346026518154962260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,7 +56,7 @@ PrefabInstance:
     - target: {fileID: 1253277914699357613, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3281820176807701792, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
@@ -104,12 +104,12 @@ PrefabInstance:
     - target: {fileID: 3281820176807701799, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.415
+      value: 0.019
       objectReference: {fileID: 0}
     - target: {fileID: 3281820176807701799, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.402
+      value: -0.719
       objectReference: {fileID: 0}
     - target: {fileID: 3281820176807701799, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}
@@ -155,6 +155,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: mushroom2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503615570830460806, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.16287917
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503615570830460806, guid: 88a4c3bc8c652b042b81cf622dca24b0,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.05102113
       objectReference: {fileID: 0}
     - target: {fileID: 5503615570830460806, guid: 88a4c3bc8c652b042b81cf622dca24b0,
         type: 3}

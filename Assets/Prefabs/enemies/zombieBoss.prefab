@@ -46,12 +46,22 @@ PrefabInstance:
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_Speed
-      value: 0.5
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Height
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_BaseOffset
-      value: 0.2
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657034, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
@@ -83,7 +93,7 @@ PrefabInstance:
     - target: {fileID: 1337939136942657037, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1337939136942657037, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}
@@ -165,6 +175,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321187208437621932, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.15666246
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321187208437621932, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321187208437621932, guid: 5d77390d53382134482583ecfe7f553e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8321187208437621932, guid: 5d77390d53382134482583ecfe7f553e,
         type: 3}

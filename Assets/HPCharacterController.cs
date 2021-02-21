@@ -109,12 +109,11 @@ public class HPCharacterController : MonoBehaviour
     }
     public void testFlip(Vector3 movement)
     {
-        flip();
-        if (facingRight == false && movement.x > 0.01f)
+        if (facingRight == false && movement.x > -0.01f)
         {
             flip();
         }
-        if (facingRight == true && movement.x < -0.01f)
+        if (facingRight == true && movement.x < 0.01f)
         {
             flip();
         }
