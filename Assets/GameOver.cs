@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class GameOver : Singleton<GameOver>
 {
+    public GameObject gameOverAllPanel;
     public GameObject gameOverPanel;
+    public GameObject gameFinishPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,20 @@ public class GameOver : Singleton<GameOver>
 
     public void Gameover()
     {
+        gameOverAllPanel.SetActive(true);
         gameOverPanel.SetActive(true);
+        gameFinishPanel.SetActive(false);
+        GameManager.Instance.isGameOver = true;
+        Time.timeScale = 0;
+
+        DialogueManager.StopConversation();
+    }
+
+    public void GameFinish()
+    {
+        gameOverAllPanel.SetActive(true);
+        gameOverPanel.SetActive(false);
+        gameFinishPanel.SetActive(true);
         GameManager.Instance.isGameOver = true;
         Time.timeScale = 0;
 

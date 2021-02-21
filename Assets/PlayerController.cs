@@ -16,6 +16,7 @@ public class PlayerController: HPCharacterController
     Vector3 originMeleeAttackPosition;
     bool firstClear = true;
     bool spawned = false;
+    public AnimatorOverrideController animatorController;
 
    // private void Awake()
    //{
@@ -37,6 +38,11 @@ public class PlayerController: HPCharacterController
     //DontDestroyOnLoad(gameObject);
     //}
     // Start is called before the first frame update
+
+    public void updateToMergedPlayer()
+    {
+        animator.runtimeAnimatorController = animatorController;
+    }
     protected override void Start()
     {
 
@@ -46,6 +52,11 @@ public class PlayerController: HPCharacterController
 
         animator = transform.Find("Sprites").GetComponent<Animator>();
         spriteObject = animator.gameObject;
+
+        if (FModSoundManager.Instance.isMerged)
+        {
+            updateToMergedPlayer();
+        }
     }
 
     //public void Damage(int dam = 1)

@@ -838,7 +838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.83}
   m_SizeDelta: {x: 860, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &268134672
@@ -6314,6 +6314,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -8
       objectReference: {fileID: 0}
+    - target: {fileID: 1961355543152513066, guid: 58ac37417e60e534f91138088a3e6f70,
+        type: 3}
+      propertyPath: gameFinishPanel
+      value: 
+      objectReference: {fileID: 1744610562}
+    - target: {fileID: 1961355543152513066, guid: 58ac37417e60e534f91138088a3e6f70,
+        type: 3}
+      propertyPath: gameOverAllPanel
+      value: 
+      objectReference: {fileID: 1814574147}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
 --- !u!114 &1201697401 stripped
@@ -46564,6 +46574,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1656730170}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1744610562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5956566403847667936, guid: 58ac37417e60e534f91138088a3e6f70,
+    type: 3}
+  m_PrefabInstance: {fileID: 1201697399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1748127809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46919,6 +46935,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: event:/Town - Forest
+--- !u!1 &1814574147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3148849890199523028, guid: 58ac37417e60e534f91138088a3e6f70,
+    type: 3}
+  m_PrefabInstance: {fileID: 1201697399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1823637902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47006,10 +47028,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1044109236, guid: 87fc9dfd1b99a9044af44c207ff7a71b, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2174674611672211872, guid: 87fc9dfd1b99a9044af44c207ff7a71b,
         type: 3}
       propertyPath: m_RootOrder
@@ -47206,7 +47224,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 168871897}
-          m_MethodName: Gameover
+          m_MethodName: GameFinish
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
