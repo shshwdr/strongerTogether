@@ -15,6 +15,7 @@ public class FModSoundManager : Singleton<FModSoundManager>
     public bool isMerged = false;
     public bool getHelpDialogue = false;
     float defaultVolumn = 0.2f;
+    bool pressedStart = false;
     //[FMODUnity.EventRef]
     //public string eventName;
     // Start is called before the first frame update
@@ -97,6 +98,12 @@ public class FModSoundManager : Singleton<FModSoundManager>
         {
             loaded = true;
             Debug.Log("Master Bank Loaded");
+            //SceneManager.LoadScene(1);
+        }
+        if(pressedStart && loaded)
+        {
+            pressedStart = false;
+
             SceneManager.LoadScene(1);
         }
     }
@@ -104,5 +111,9 @@ public class FModSoundManager : Singleton<FModSoundManager>
     {
         currentAmbience().stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         //Destroy(ambience);
+    }
+    public void startGame()
+    {
+        pressedStart = true;
     }
 }

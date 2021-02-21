@@ -959,7 +959,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It's.. Valentines day. (arrow key to continue)
+        value: "It's Valentine's day and everyone has got a date except me.\r (arrow
+          key to continue)"
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1042,7 +1043,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Everybody has valentines. Except...
+        value: People in town say they are afraid of a demonic cat that has threatened
+          the town before.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1084,7 +1086,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 2
         destinationConversationID: 3
-        destinationDialogueID: 3
+        destinationDialogueID: 5
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1095,7 +1097,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 120
+        y: 118.684204
         width: 160
         height: 30
     - id: 3
@@ -1125,7 +1127,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: But it's ok. I can always go to the monsters' lair and kill monsters!
+        value: There is a rumor that this beast lives in the Northern Forest Dungeon
+          and guarded by different monsters.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1167,7 +1170,7 @@ MonoBehaviour:
       - originConversationID: 3
         originDialogueID: 3
         destinationConversationID: 3
-        destinationDialogueID: 4
+        destinationDialogueID: 6
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1177,8 +1180,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
-        y: 170
+        x: 31.31578
+        y: 231.84212
         width: 160
         height: 30
     - id: 4
@@ -1208,7 +1211,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: This will be a meaningful Valentines day!
+        value: "Well, I better be careful if I'm going, because today is Valentine's
+          day and love is in the air!\r"
         type: 0
         typeString: 
       - title: Parenthetical
@@ -1255,11 +1259,179 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 31.176468
-        y: 285.88235
+        y: 359.56653
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 91.08185}
-    canvasZoom: 0.7600002
+    - id: 5
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "Now that I don't have a date, I can take the dangerous task of facing
+          this powerful enemy to save the town.\r"
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: canvasRect
+        value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 5
+        destinationConversationID: 3
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 33.947365
+        y: 167.36847
+        width: 160
+        height: 30
+    - id: 6
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "They merge into a stronger creature when they fall in love with each
+          other.\r"
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: canvasRect
+        value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 6
+        destinationConversationID: 3
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 36.578926
+        y: 283.15787
+        width: 160
+        height: 30
+    canvasScrollPosition: {x: 0, y: 97.051025}
+    canvasZoom: 0.8200002
   - id: 4
     fields:
     - title: Title
@@ -4464,10 +4636,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Also I saw that only monster the same can merge, i''m nothing like
+        value: Also I saw that only monster the same can merge, i'm nothing like
           you, you monster!
-
-'
         type: 0
         typeString: 
       - title: Parenthetical
@@ -5078,7 +5248,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: 
+        value: d8f320be-ad40-4665-b1df-f7ef7cd44a59
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -5489,7 +5659,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: 
+        value: de85d54a-c726-42f0-a31f-ada8e9c66bb8
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -5766,8 +5936,8 @@ MonoBehaviour:
         y: 819.93616
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 638.68066}
-    canvasZoom: 0.5800004
+    canvasScrollPosition: {x: 0, y: 255.14426}
+    canvasZoom: 0.37000045
   - id: 10
     fields:
     - title: Title
@@ -8754,10 +8924,10 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 162.75853
-        y: 504.7782
+        y: 503.05408
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 157.65503}
     canvasZoom: 0.5800004
   - id: 14
     fields:
@@ -9123,7 +9293,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasHelp"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9568,7 +9738,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: 
+        value: f4f10058-ddd0-4a39-8019-5432f456c3f2
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -9587,14 +9757,25 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_MethodName: 
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 30
         y: 220
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 59}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1
   - id: 16
     fields:

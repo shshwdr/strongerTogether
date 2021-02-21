@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using PixelCrushers.DialogueSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ public class DialogueEventHelper : Singleton<DialogueEventHelper>
         Time.timeScale = 1;
         dialogueFinished = true;
         EnemyManager.instance.updateLevel();
+        DialogueManager.StopConversation();
     }
     // Update is called once per frame
     void Update()

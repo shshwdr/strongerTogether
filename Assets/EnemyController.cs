@@ -33,12 +33,16 @@ public class EnemyController : HPCharacterController
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        
 
         EnemyManager.instance.enemiesDictionary[enemyType].Add(this);
         base.Start();
+
+        animator = transform.Find("test").GetComponentInChildren<Animator>();
+        spriteObject = animator.transform.parent.gameObject;
         EnemyManager.instance.updateEnemies();
         originSpeed = agent.speed;
-        m_Renderer = spriteObject. GetComponent<SpriteRenderer>();
+        m_Renderer = animator. GetComponent<SpriteRenderer>();
         offMergeDistance = GetComponent<CircleCollider2D>().radius * 2f;
 
         if (FModSoundManager.Instance.isMerged && !FModSoundManager.Instance.getHelpDialogue && mergeLevel == 2)

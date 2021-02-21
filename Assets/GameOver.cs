@@ -17,6 +17,8 @@ public class GameOver : Singleton<GameOver>
         gameOverPanel.SetActive(true);
         GameManager.Instance.isGameOver = true;
         Time.timeScale = 0;
+
+        DialogueManager.StopConversation();
     }
 
     public void Restart()
@@ -27,6 +29,7 @@ public class GameOver : Singleton<GameOver>
         DialogueLua.SetVariable("hasHelp", false);
         gameOverPanel.SetActive(false);
         GameManager.Instance.GotoLevel(0);
+        DialogueManager.StopConversation();
     }
 
     public void RestartLevel()

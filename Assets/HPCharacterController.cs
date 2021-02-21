@@ -29,8 +29,6 @@ public class HPCharacterController : MonoBehaviour
 
         emotesController = GetComponentInChildren<EmotesController>();
         hpBar = GetComponentInChildren<HPBarHandler>();
-        animator = transform.Find("Sprites").GetComponent<Animator>();
-        spriteObject = animator.gameObject;
         rb = GetComponent<Rigidbody2D>();
     }
     virtual protected void Start()
@@ -72,7 +70,7 @@ public class HPCharacterController : MonoBehaviour
         {
             return;
         }
-        if (FModSoundManager.Instance.isMerged)
+        if (FModSoundManager.Instance.isMerged && damage!=1000)
         {
             return;
         }
@@ -105,16 +103,18 @@ public class HPCharacterController : MonoBehaviour
         facingRight = !facingRight;
         Vector3 scaler = spriteObject.transform.localScale;
         scaler.x = -scaler.x;
+        // spriteObject.transform.position = new Vector3(spriteObject.transform.position.x + 1, spriteObject.transform.position.y, -1);
         spriteObject.transform.localScale = scaler;
+        //spriteObject.GetComponent<SpriteRenderer>().flipX = !facingRight;
     }
     public void testFlip(Vector3 movement)
     {
-
-        if (facingRight == false && movement.x > 0)
+        flip();
+        if (facingRight == false && movement.x > 0.01f)
         {
             flip();
         }
-        if (facingRight == true && movement.x < 0)
+        if (facingRight == true && movement.x < -0.01f)
         {
             flip();
         }

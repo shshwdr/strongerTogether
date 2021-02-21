@@ -43,6 +43,9 @@ public class PlayerController: HPCharacterController
         EnemyManager.instance.player = this;
         originMeleeAttackPosition = meleeAttackCollider.transform.localPosition;
         base.Start();
+
+        animator = transform.Find("Sprites").GetComponent<Animator>();
+        spriteObject = animator.gameObject;
     }
 
     //public void Damage(int dam = 1)
@@ -146,7 +149,6 @@ public class PlayerController: HPCharacterController
                 spawned = true;
 
                 DialogueManager.StartConversation("firstMerge", null, null);
-
             }
 
         }
