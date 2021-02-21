@@ -19,6 +19,7 @@ public class FModSoundManager : Singleton<FModSoundManager>
     //[FMODUnity.EventRef]
     //public string eventName;
     // Start is called before the first frame update
+
     void Start()
     {
         //ambience = FMODUnity.RuntimeManager.CreateInstance(eventName);
@@ -98,6 +99,7 @@ public class FModSoundManager : Singleton<FModSoundManager>
         {
             loaded = true;
             Debug.Log("Master Bank Loaded");
+            startEvent("event:/Town - Forest");
             //SceneManager.LoadScene(1);
         }
         if(pressedStart && loaded)

@@ -91,22 +91,27 @@ public class EnemyManager : MonoBehaviour
 
     }
 
+    public void destoryAllEnemies()
+    {
+        foreach (var enemyList in enemiesDictionary.Values)
+        {
+            foreach (var enemy in enemyList)
+            {
+                if (enemy && !enemy.isDead)
+                {
+                    enemy.getDamage(10000);
+                }
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         
         if (Input.GetKeyDown(KeyCode.K))
         {
-            foreach (var enemyList in enemiesDictionary.Values)
-            {
-                foreach (var enemy in enemyList)
-                {
-                    if (enemy && !enemy.isDead )
-                    {
-                        enemy.getDamage(10000);
-                    }
-                }
-            }
+            destoryAllEnemies();
             if (bossController)
             {
 

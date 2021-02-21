@@ -669,7 +669,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Huh? Even monsters have their Valentines?
+        value: Huh? Even monsters have their Valentine's?
         type: 0
         typeString: 
       - title: Parenthetical
@@ -722,7 +722,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 69
+        y: 68
         width: 160
         height: 30
     - id: 2
@@ -2487,7 +2487,7 @@ MonoBehaviour:
     - id: 3
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -2511,7 +2511,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'That''s my Valentines gift for all of you.
+        value: 'That''s my Valentine''s gift for all of you.
 
           You''re welcome.'
         type: 0
@@ -3158,7 +3158,7 @@ MonoBehaviour:
     - id: 1
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -3182,7 +3182,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: this room looks empty.
+        value: This room looks empty.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -3982,8 +3982,8 @@ MonoBehaviour:
         y: 520
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 258.5993}
-    canvasZoom: 0.76000017
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1.03
   - id: 9
     fields:
     - title: Title
@@ -4284,7 +4284,7 @@ MonoBehaviour:
     - id: 3
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -4308,7 +4308,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Wait wait wait!
+        value: Wait, wait, wait!
         type: 0
         typeString: 
       - title: Parenthetical
@@ -5284,7 +5284,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 35
-        y: 676
+        y: 674.6301
         width: 160
         height: 30
     - id: 15
@@ -5943,8 +5943,8 @@ MonoBehaviour:
         y: 819.93616
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 550.00024}
-    canvasZoom: 0.7600002
+    canvasScrollPosition: {x: 0, y: 13.758667}
+    canvasZoom: 0.73000026
   - id: 10
     fields:
     - title: Title
@@ -7608,7 +7608,7 @@ MonoBehaviour:
     - id: 1
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -7632,7 +7632,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: people are sharing the good news of extermination of the monsters.
+        value: People are sharing the good news of extermination of the monsters.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -7881,7 +7881,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Maybe merging with that lonely cat is not the worst idea. At least
+        value: Maybe merging with that lonely cat was not the worst idea. At least
           I wouldn't be alone then.
         type: 0
         typeString: 
@@ -8935,7 +8935,7 @@ MonoBehaviour:
         y: 503.05408
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 302.0895}
+    canvasScrollPosition: {x: 7.462677, y: 0}
     canvasZoom: 0.67000026
   - id: 14
     fields:

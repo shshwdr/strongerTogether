@@ -42,7 +42,8 @@ public class GameOver : Singleton<GameOver>
         FModSoundManager.Instance.startEvent("");
         DialogueLua.SetVariable("merged", false);
         DialogueLua.SetVariable("hasHelp", false);
-        gameOverPanel.SetActive(false);
+        FModSoundManager.Instance.isMerged = false;
+        gameOverAllPanel.SetActive(false);
         GameManager.Instance.GotoLevel(0);
         DialogueManager.StopConversation();
     }
@@ -52,13 +53,15 @@ public class GameOver : Singleton<GameOver>
         FModSoundManager.Instance.SetParam("Game Over", 0);
 
         FModSoundManager.Instance.startEvent("");
-        DialogueLua.SetVariable("merged", false);
-        DialogueLua.SetVariable("hasHelp", false);
-        gameOverPanel.SetActive(false);
+        gameOverAllPanel.SetActive(false);
         if(GameManager.Instance.currentLevel >= 6)
         {
 
             GameManager.Instance.GotoLevel(6);
+
+            DialogueLua.SetVariable("merged", false);
+            DialogueLua.SetVariable("hasHelp", false);
+            FModSoundManager.Instance.isMerged = false;
         }
         else
         {

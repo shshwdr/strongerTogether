@@ -22,7 +22,7 @@ public class AddTrail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (/*agent.velocity.magnitude >= 0.01*/!enemyController.isStuned)
+        if (!FModSoundManager.Instance.isMerged && /*agent.velocity.magnitude >= 0.01*/!enemyController.isStuned)
         {
             if (currentTrailTimer >= generateTrailCooldown)
             {

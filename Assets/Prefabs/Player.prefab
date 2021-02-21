@@ -185,7 +185,7 @@ MonoBehaviour:
   bossDefeated: {fileID: 8300000, guid: 7261d199a80150844b5626c55c2ca78b, type: 3}
   gameover: {fileID: 8300000, guid: 303b1d640b5a3664ea48a35da08b5ff7, type: 3}
   victory: {fileID: 8300000, guid: cc9e7783027bc00428169223b818385c, type: 3}
-  merge: {fileID: 8300000, guid: c26f6e10a70c3b24587c8cf53b79f0b1, type: 3}
+  merge: {fileID: 8300000, guid: 18570b01cf7b5c043ae5e57ea172eacc, type: 3}
   playerHurt:
   - {fileID: 8300000, guid: 145789af2ada42646a1092be8f7bf539, type: 3}
   - {fileID: 8300000, guid: 1ecdc9081157c0349b4be8799affc627, type: 3}

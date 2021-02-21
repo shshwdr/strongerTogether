@@ -27,7 +27,7 @@ public class BossController : HPCharacterController
     // Start is called before the first frame update
 
     public GameObject[] abilities;
-    float abilitySwitchTime = 3f;
+    float abilitySwitchTime = 5f;
     float currentAiblitySwitchTimer = 0;
     int currentAbilityId = 0;
 
@@ -41,15 +41,18 @@ public class BossController : HPCharacterController
         agent.enabled = true;
         agent.isStopped = false;
         agent.SetDestination(EnemyManager.instance.player.transform.position);
-        solidCollider.offset = new Vector2(0f, -0.1f);
+        solidCollider.offset = new Vector2(0f, 0.1f);
         solidCollider.size = new Vector2(0.2f, 0.25f);
-
+        var newEmotePosition = emotesController.gameObject.transform.localPosition;
+        newEmotePosition.y = 0.3f;
+        emotesController.gameObject.transform.localPosition = newEmotePosition;
         solidCollider.enabled = true;
         switchAbility();
     }
 
     void switchAbility()
     {
+        emotesController.showEmote(EmoteType.angry);
         abilities[currentAbilityId].SetActive(false);
         currentAbilityId++;
         if (currentAbilityId >= abilities.Length)
@@ -115,6 +118,7 @@ public class BossController : HPCharacterController
         dashColliderObject.SetActive(false);
         solidCollider.enabled = true;
         animator.SetBool("spawn", true);
+        selectNextSpawnId();
         EnemyManager.instance.spawnMinions(spawnPositions.transform.GetChild(spawnId).transform.position);
 
         yield return new WaitForSeconds(0.5f);
@@ -126,7 +130,6 @@ public class BossController : HPCharacterController
         Debug.Log("finish spawn 2");
         animator.SetBool("spawn", false);
         //Debug.Log("select next");
-        selectNextSpawnId();
         //Debug.Log("spawn finished");
 
         //Debug.Log("remaining after finishe " + agent.remainingDistance);
@@ -160,6 +163,9 @@ public class BossController : HPCharacterController
     {
         maxHp = maxHps[stage];
         base.Start();
+
+        animator = transform.Find("test").GetComponentInChildren<Animator>();
+        spriteObject = animator.transform.parent.gameObject;
         solidCollider = GetComponent<BoxCollider2D>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -240,7 +246,9 @@ public class BossController : HPCharacterController
         {
            // Destroy(gameObject);
             AudioManager.Instance.playBossDefeat();
+            EnemyManager.instance.destoryAllEnemies();
             DialogueManager.StartConversation(conversation, null, null);
+
         }
     }
     
