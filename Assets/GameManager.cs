@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public bool isCheatOn = true;
+    public bool isCheatOn = false;
     public int currentLevel;
     public bool isGameOver;
 
@@ -47,10 +47,10 @@ public class GameManager : Singleton<GameManager>
                 //SceneManager.LoadScene(i);
             }
         }
-        if ((!EnemyManager.instance.player || EnemyManager.instance.player.isDead) && Input.GetKeyDown(KeyCode.R))
-        {
-            RestartLevel();
-        }
+        //if ((!EnemyManager.instance.player || EnemyManager.instance.player.isDead) && Input.GetKeyDown(KeyCode.R))
+        //{
+        //    RestartLevel();
+        //}
     }
 
     public void RestartLevel()

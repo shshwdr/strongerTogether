@@ -109,15 +109,15 @@ public class EnemyManager : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            destoryAllEnemies();
-            if (bossController)
-            {
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    destoryAllEnemies();
+        //    if (bossController)
+        //    {
 
-                bossController.getDamage(10000);
-            }
+        //        bossController.getDamage(10000);
+        //    }
 
-        }
+        //}
     }
 }

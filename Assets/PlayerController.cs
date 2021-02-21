@@ -146,10 +146,10 @@ public class PlayerController: HPCharacterController
         }
         // transform
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            getDamage(1000);
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    getDamage(1000);
+        //}
 
         if (FModSoundManager.Instance.isMerged && Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.currentLevel == 6&& DialogueEventHelper.Instance.dialogueFinished)
         {
