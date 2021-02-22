@@ -108,16 +108,16 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //if (Input.GetKeyDown(KeyCode.K))
-        //{
-        //    destoryAllEnemies();
-        //    if (bossController)
-        //    {
 
-        //        bossController.getDamage(10000);
-        //    }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            destoryAllEnemies();
+            if (bossController)
+            {
 
-        //}
+                bossController.getDamage(10000);
+            }
+
+        }
     }
 }

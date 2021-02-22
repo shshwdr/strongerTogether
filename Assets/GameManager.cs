@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public bool isCheatOn = false;
+    bool isCheatOn = true;
     public int currentLevel;
     public bool isGameOver;
 
